@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Cloze/static/css/main.948f7b6c.css",
+    "main.js": "/Cloze/static/js/main.0be8fe7f.js",
+    "static/js/453.4a3a137e.chunk.js": "/Cloze/static/js/453.4a3a137e.chunk.js",
+    "index.html": "/Cloze/index.html",
+    "main.948f7b6c.css.map": "/Cloze/static/css/main.948f7b6c.css.map",
+    "main.0be8fe7f.js.map": "/Cloze/static/js/main.0be8fe7f.js.map",
+    "453.4a3a137e.chunk.js.map": "/Cloze/static/js/453.4a3a137e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.948f7b6c.css",
+    "static/js/main.0be8fe7f.js"
+  ]
+}
