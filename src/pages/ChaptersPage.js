@@ -12,7 +12,8 @@ export default function ChaptersPage() {
         setCurrentPage,
         startChapter,
         completedChapters,
-        setReplayChapterId
+        getChapterProgress,
+        replayChapter
     } = useApp();
 
     const [selectedWord, setSelectedWord] = useState(null);
@@ -33,8 +34,7 @@ export default function ChaptersPage() {
     };
 
     const handleReplayChapter = (chapterId) => {
-        startChapter(chapterId);
-        setReplayChapterId(chapterId);
+        replayChapter(chapterId); // This sets the replay flag without resetting progress
         setCurrentPage('play');
     };
 
@@ -45,6 +45,15 @@ export default function ChaptersPage() {
 
     const isChapterCompleted = (chapterId) => {
         return completedChapters.includes(chapterId);
+    };
+
+    const getChapterPracticeProgress = (chapterId) => {
+        const progress = getChapterProgress(chapterId);
+        return {
+            revealed: progress.revealedPractice || 0,
+            total: progress.totalPractice || 0,
+            percentage: progress.practicePercentage || 0
+        };
     };
 
     const getWordObjectsFromIds = (wordIds) => {
@@ -101,11 +110,15 @@ export default function ChaptersPage() {
                         const isExpanded = expandedLevels[`chapter-${chapter.id}`] || false;
                         const isLocked = isChapterLocked(chapter.id);
                         const isCompleted = isChapterCompleted(chapter.id);
+                        const progress = getChapterPracticeProgress(chapter.id);
+
+                        const practiceSentences = chapter.sentences?.filter(s => s.type === 'practice') || [];
+                        const hasProgress = progress.revealed > 0 && !isCompleted;
 
                         return (
                             <li key={chapter.id} className="chapter-item">
                                 <div
-                                    className={`chapter-header ${isLocked ? 'locked' : ''} ${isExpanded ? 'expanded' : ''}`}
+                                    className={`chapter-header ${isLocked ? 'locked' : ''} ${isExpanded ? 'expanded' : ''} ${isCompleted ? 'completed' : ''}`}
                                     onClick={() => !isLocked && toggleLevel(`chapter-${chapter.id}`)}
                                 >
                                     <span className="chapter-expand-icon">
@@ -116,6 +129,16 @@ export default function ChaptersPage() {
                                     </span>
                                     <span className="chapter-stats">
                                         {chapterWords.length} words
+                                        {!isLocked && practiceSentences.length > 0 && !isCompleted && (
+                                            <span className="chapter-progress-badge">
+                                                {progress.revealed}/{practiceSentences.length}
+                                            </span>
+                                        )}
+                                        {isCompleted && (
+                                            <span className="chapter-complete-badge" title="Chapter completed">
+                                                ✓
+                                            </span>
+                                        )}
                                     </span>
                                 </div>
 
@@ -129,13 +152,29 @@ export default function ChaptersPage() {
                                                         e.stopPropagation();
                                                         handleReplayChapter(chapter.id);
                                                     }}
-                                                    title="Replay chapter"
+                                                    title="Replay chapter (preserves your progress)"
                                                 >
                                                     ↻ Play Again
                                                 </button>
                                             </div>
                                         )}
+
+                                        {hasProgress && !isCompleted && (
+                                            <div className="chapter-progress-container">
+                                                <div className="chapter-progress-bar">
+                                                    <div
+                                                        className="chapter-progress-fill"
+                                                        style={{ width: `${progress.percentage}%` }}
+                                                    />
+                                                </div>
+                                                <span className="chapter-progress-text">
+                                                    {progress.revealed} of {progress.total} practice sentences completed
+                                                </span>
+                                            </div>
+                                        )}
+
                                         <p className="chapter-description">{chapter.description}</p>
+
                                         <WordGrid
                                             words={chapterWords}
                                             wordMastery={wordMastery}

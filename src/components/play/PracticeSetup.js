@@ -13,11 +13,13 @@ export default function PracticeSetup({ onStart, completedChapters }) {
     // Update available topics when completed chapters change
     useEffect(() => {
         const topics = getAvailableTopics(safeCompletedChapters);
-        const topicOptions = ['all', ...topics];
+        // Filter out 'Narrative' topic
+        const filteredTopics = topics.filter(topic => topic !== 'Narrative');
+        const topicOptions = ['all', ...filteredTopics];
         setAvailableTopics(topicOptions);
 
         // Reset selected topic if it's no longer available
-        if (selectedTopic !== 'all' && !topics.includes(selectedTopic)) {
+        if (selectedTopic !== 'all' && !filteredTopics.includes(selectedTopic)) {
             setSelectedTopic('all');
         }
     }, [safeCompletedChapters]);

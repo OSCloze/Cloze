@@ -1,100 +1,106 @@
 import React from 'react';
-import { useApp } from '../../context/AppContext';
-import { getSessionStats } from '../../utils/gameHelpers';
 
-export default function ReviewScreen({
-  sessionSentences,
-  sessionResults,
-  onPlayAgain,
-  mode,
-  chapterId,
-  chapterTitle,
-  isChapterComplete
-}) {
-  const stats = getSessionStats(sessionResults);
+const ReviewScreen = ({ reviewItems, onPlayAgain, onReturnToChapters, onNextChapter }) => {
+  const totalQuestions = reviewItems?.length || 0;
+  const correctCount = reviewItems?.filter(item => item?.isCorrect)?.length || 0;
+  const incorrectCount = totalQuestions - correctCount;
+
+  if (!reviewItems || reviewItems.length === 0) {
+    return (
+      <div className="review-panel">
+        <h2 className="review-title">Review</h2>
+        <div className="empty-message">No questions to review</div>
+        <div className="post-check-row">
+          <button onClick={onReturnToChapters} className="btn-primary">
+            Return to Chapters
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="play-content play-content--review">
-      <div className="review-panel">
-        <h2 className="review-title">
-          {mode === 'story' ? 'Chapter Complete!' : 'Session Complete'}
-        </h2>
+    <div className="review-panel">
+      <h2 className="review-title">Review</h2>
 
-        {/* Simple chapter completion message */}
-        {mode === 'story' && isChapterComplete && (
-          <p className="chapter-complete-simple">
-            You've completed Chapter {chapterId}: {chapterTitle}
-          </p>
-        )}
-
-        {/* Summary stats */}
-        <div className="review-stats">
-          <div className="stat-item">
-            <div className="stat-value correct">{stats.correct}</div>
-            <div className="stat-label">Correct</div>
+      <div className="review-stats">
+        <div className="stat-item">
+          <div className={`stat-value ${correctCount > 0 ? 'correct' : ''}`}>
+            {correctCount}
           </div>
-          <div className="stat-item">
-            <div className="stat-value incorrect">{stats.incorrect}</div>
-            <div className="stat-label">Incorrect</div>
-          </div>
+          <div className="stat-label">Correct</div>
         </div>
+        <div className="stat-item">
+          <div className={`stat-value ${incorrectCount > 0 ? 'incorrect' : ''}`}>
+            {incorrectCount}
+          </div>
+          <div className="stat-label">Incorrect</div>
+        </div>
+        <div className="stat-item">
+          <div className="stat-value">{totalQuestions}</div>
+          <div className="stat-label">Total</div>
+        </div>
+      </div>
 
-        <h3 className="review-subtitle">Review Answers</h3>
+      <h3 className="review-subtitle">Question Details</h3>
 
-        <ul className="review-list">
-          {sessionSentences.map((sentence, idx) => {
-            const result = sessionResults[sentence.id];
-            const wasCorrect = result?.correct || false;
-            const userAnswer = result?.answer || '';
+      <ul className="review-list">
+        {reviewItems.map((item, index) => {
+          const sentence = item?.sentence || '';
+          const native = item?.native || '';
+          const userAnswer = item?.userAnswer || '';
+          const correctAnswer = item?.correctAnswer || '';
+          const isCorrect = item?.isCorrect || false;
 
-            return (
-              <li key={idx} className={`review-item ${wasCorrect ? 'review-item--correct' : 'review-item--wrong'}`}>
-                <div className="review-item-header">
-                  <span className={`review-badge ${wasCorrect ? 'review-badge--correct' : 'review-badge--wrong'}`}>
-                    {wasCorrect ? '✓ Correct' : '✗ Incorrect'}
-                  </span>
-                </div>
+          return (
+            <li
+              key={index}
+              className={`review-item ${isCorrect ? 'review-item--correct' : 'review-item--wrong'}`}
+            >
+              <div className="review-item-header">
+                <span className={`review-badge ${isCorrect ? 'review-badge--correct' : 'review-badge--wrong'}`}>
+                  {isCorrect ? '✓ Correct' : '✗ Incorrect'}
+                </span>
+              </div>
 
-                {wasCorrect ? (
-                  <p className="review-sentence">
-                    {sentence.sentence.replace('_____', sentence.answer)}
-                  </p>
-                ) : (
-                  <div className="review-incorrect-detail">
-                    <p className="review-sentence">
-                      {sentence.sentence.split('_____').map((part, i) => (
-                        <React.Fragment key={i}>
-                          {part}
-                          {i === 0 && (
-                            <span className="review-user-answer">
-                              {userAnswer || "???"}
-                            </span>
-                          )}
-                        </React.Fragment>
-                      ))}
-                    </p>
-                    <p className="review-correct-answer">
-                      Correct answer: <span className="correct-highlight">{sentence.answer}</span>
-                    </p>
+              <p className="review-sentence">{sentence}</p>
+              <p className="review-native">{native}</p>
+
+              {!isCorrect && (
+                <div className="review-incorrect-detail">
+                  <div className="review-user-answer">
+                    Your answer: <span className="user-answer-value">{userAnswer || '(no answer)'}</span>
                   </div>
-                )}
+                  <div className="review-correct-answer">
+                    Correct: <span className="correct-highlight">{correctAnswer}</span>
+                  </div>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ul>
 
-                {sentence.nativeSentence && (
-                  <p className="review-native">{sentence.nativeSentence}</p>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-
-        <button
-          type="button"
-          className="btn-primary"
-          onClick={onPlayAgain}
-        >
-          {mode === 'story' ? 'Back to Chapters' : 'New Session'}
-        </button>
+      <div className="post-check-row">
+        {onNextChapter ? (
+          // If there's a next chapter, show only the Next Chapter button
+          <button onClick={onNextChapter} className="btn-primary">
+            Next Chapter
+          </button>
+        ) : (
+          // Otherwise (practice mode or last chapter), show the usual two buttons
+          <>
+            <button onClick={onPlayAgain} className="btn-primary">
+              Play Again
+            </button>
+            <button onClick={onReturnToChapters} className="btn-secondary">
+              Return to Chapters
+            </button>
+          </>
+        )}
       </div>
     </div>
   );
-}
+};
+
+export default ReviewScreen;

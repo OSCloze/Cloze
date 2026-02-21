@@ -9,36 +9,30 @@ import './App.css';
 function AppContent() {
   const { currentPage } = useApp();
 
-  // Global Enter key handler
+  // Global Enter Key Handler
   useEffect(() => {
-    const handleGlobalKeyDown = (e) => {
-      if (e.key === 'Enter') {
-        // Find the play page component and check if we're in a game
-        const playPage = document.querySelector('[data-view="play"]');
-        if (playPage && playPage.classList.contains('is-active')) {
-          // Look for active buttons in the play page
-          const checkButton = document.querySelector('#checkButton');
-          const nextButton = document.querySelector('#nextButton');
-          const postCheckRow = document.querySelector('.post-check-row');
+    const handleKeyPress = (event) => {
+      if (event.key === 'Enter') {
+        // Find the currently visible primary action button
+        // This checks for buttons in the active view only
+        const activeView = document.querySelector('.view.is-active');
+        if (!activeView) return;
 
-          // If post-check row is visible, trigger next
-          if (postCheckRow && !postCheckRow.hidden) {
-            e.preventDefault();
-            if (nextButton) {
-              nextButton.click();
-            }
-          }
-          // Otherwise, if check button is visible and enabled, trigger check
-          else if (checkButton && !checkButton.disabled && !checkButton.hidden) {
-            e.preventDefault();
-            checkButton.click();
-          }
+        // Look for primary action buttons within the active view
+        const primaryButton = activeView.querySelector(
+          '.continue-story-btn, #nextButton, .btn-primary:not(:disabled)'
+        );
+
+        if (primaryButton && !primaryButton.disabled) {
+          primaryButton.click();
         }
       }
     };
 
-    window.addEventListener('keydown', handleGlobalKeyDown);
-    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+    window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
   }, []);
 
   return (

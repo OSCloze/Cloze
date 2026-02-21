@@ -14,7 +14,6 @@ export default function PlayPage() {
   const [showVocabulary, setShowVocabulary] = useState(false);
   const [currentChapterWords, setCurrentChapterWords] = useState([]);
 
-  // First, get all values from useApp
   const {
     completedLevels,
     handleCorrectAnswer,
@@ -30,12 +29,12 @@ export default function PlayPage() {
     isChapterCompleted,
     replayChapterId,
     setReplayChapterId,
-    startChapter
+    startChapter,
+    setCurrentPage
   } = useApp();
 
   const gameSession = useGameSession();
 
-  // Now we can safely use completedChapters
   const isChapter1Completed = completedChapters?.includes(1) || false;
 
   const getCurrentChapter = () => {
@@ -49,26 +48,65 @@ export default function PlayPage() {
 
   const currentChapter = getCurrentChapter();
   const progress = currentChapter ? getChapterProgress(currentChapter.id) : null;
-  const progressPercentage = currentChapter && progress ?
-    Math.round((progress.revealedSentences.length / currentChapter.sentences.length) * 100) : 0;
   const isFirstTimeInChapter = currentChapter && progress && progress.revealedSentences.length === 0;
+
+  // Helper to start a chapter by ID (used for replay and next chapter)
+  const startChapterById = (chapterId) => {
+    const chapter = chapters.find(c => c.id === chapterId);
+    if (!chapter) return;
+
+    const progress = getChapterProgress(chapterId);
+    const isFirstTime = progress.revealedSentences.length === 0;
+
+    gameSession.setMode('story');
+    gameSession.setChapterId(chapterId);
+    gameSession.setChapterTitle(chapter.title);
+    gameSession.setChapterImage(chapter.image);
+
+    if (isFirstTime) {
+      const chapterWords = chapter.words.map(id => getWordById(id)).filter(Boolean);
+      setCurrentChapterWords(chapterWords);
+      setShowVocabulary(true);
+    } else {
+      const currentSentence = getCurrentSentence(chapterId);
+      const remainingSentences = chapter.sentences.slice(
+        chapter.sentences.findIndex(s => s.id === currentSentence?.id)
+      );
+      gameSession.startSession(
+        remainingSentences,
+        'story',
+        chapterId,
+        chapter.title,
+        chapter.image
+      );
+    }
+  };
 
   // Handle replay flag
   useEffect(() => {
     if (replayChapterId) {
       const chapter = chapters.find(c => c.id === replayChapterId);
       if (chapter) {
+        // Reset UI state
+        setShowVocabulary(false);
+        setCurrentChapterWords([]);
+
+        // Set up for replay - start from the beginning
         gameSession.setMode('story');
         gameSession.setChapterId(replayChapterId);
         gameSession.setChapterTitle(chapter.title);
         gameSession.setChapterImage(chapter.image);
+
+        // Always start from the first sentence for replay
         gameSession.startSession(
-          chapter.sentences,
+          chapter.sentences, // Full chapter from beginning
           'story',
           replayChapterId,
           chapter.title,
           chapter.image
         );
+
+        // Clear the replay flag
         setReplayChapterId(null);
       }
     }
@@ -130,7 +168,9 @@ export default function PlayPage() {
       completedChapters?.forEach(chapterId => {
         const chapter = chapters.find(c => c.id === chapterId);
         if (chapter && chapter.sentences) {
-          allSentences = [...allSentences, ...chapter.sentences];
+          // Filter to only practice sentences
+          const practiceSentences = chapter.sentences.filter(s => s.type === 'practice');
+          allSentences = [...allSentences, ...practiceSentences];
         }
       });
     } else {
@@ -138,14 +178,17 @@ export default function PlayPage() {
       completedChapters?.forEach(chapterId => {
         const chapter = chapters.find(c => c.id === chapterId);
         if (chapter && chapter.sentences) {
-          const filtered = chapter.sentences.filter(s => s.topic === selectedTopic);
+          // Filter to only practice sentences with matching topic
+          const filtered = chapter.sentences.filter(s =>
+            s.type === 'practice' && s.topic === selectedTopic
+          );
           allSentences = [...allSentences, ...filtered];
         }
       });
     }
 
     if (allSentences.length === 0) {
-      alert('No sentences available for the selected topic. Try a different topic.');
+      alert('No practice sentences available for the selected topic. Try a different topic.');
       return;
     }
 
@@ -161,32 +204,7 @@ export default function PlayPage() {
 
   const handleStartStory = () => {
     if (!currentChapter) return;
-
-    const progress = getChapterProgress(currentChapter.id);
-    const isFirstTime = progress.revealedSentences.length === 0;
-
-    gameSession.setMode('story');
-    gameSession.setChapterId(currentChapter.id);
-    gameSession.setChapterTitle(currentChapter.title);
-    gameSession.setChapterImage(currentChapter.image);
-
-    if (isFirstTime) {
-      const chapterWords = currentChapter.words.map(id => getWordById(id)).filter(Boolean);
-      setCurrentChapterWords(chapterWords);
-      setShowVocabulary(true);
-    } else {
-      const currentSentence = getCurrentSentence(currentChapter.id);
-      const remainingSentences = currentChapter.sentences.slice(
-        currentChapter.sentences.findIndex(s => s.id === currentSentence?.id)
-      );
-      gameSession.startSession(
-        remainingSentences,
-        'story',
-        currentChapter.id,
-        currentChapter.title,
-        currentChapter.image
-      );
-    }
+    startChapterById(currentChapter.id);
   };
 
   const handleCheck = () => {
@@ -199,7 +217,10 @@ export default function PlayPage() {
         gameSession.currentSentence.level
       );
 
-      if (gameSession.mode === 'story' && gameSession.chapterId) {
+      // Only mark practice sentences as revealed
+      if (gameSession.mode === 'story' &&
+        gameSession.chapterId &&
+        gameSession.currentSentence.type === 'practice') {
         markSentenceRevealed(
           gameSession.chapterId,
           gameSession.currentSentence.id
@@ -246,6 +267,37 @@ export default function PlayPage() {
 
   const handleWordClick = (wordData) => {
     gameSession.setSelectedWord(wordData);
+  };
+
+  const handleReturnToChapters = () => {
+    gameSession.resetToSetup();
+    setCurrentPage('chapters');
+  };
+
+  // Build review items from session results
+  const reviewItems = gameSession.sessionSentences
+    .filter(sentence => gameSession.sessionResults[sentence.id])
+    .map(sentence => {
+      const result = gameSession.sessionResults[sentence.id];
+      return {
+        sentence: sentence.sentence || sentence.chinese || '',
+        native: sentence.native || sentence.nativeSentence || '',
+        userAnswer: result.answer,
+        correctAnswer: sentence.answer,
+        isCorrect: result.correct
+      };
+    });
+
+  // Determine next chapter (if any)
+  const currentChapterId = gameSession.chapterId;
+  const currentChapterIndex = chapters.findIndex(c => c.id === currentChapterId);
+  const nextChapter = (currentChapterIndex >= 0 && currentChapterIndex < chapters.length - 1)
+    ? chapters[currentChapterIndex + 1]
+    : null;
+
+  const handleNextChapter = () => {
+    gameSession.resetToSetup();   // go back to setup screen
+    setMode('story');             // ensure story mode stays active
   };
 
   return (
@@ -347,13 +399,10 @@ export default function PlayPage() {
 
       {gameSession.gameState === 'review' && (
         <ReviewScreen
-          sessionSentences={gameSession.sessionSentences}
-          sessionResults={gameSession.sessionResults}
+          reviewItems={reviewItems}
           onPlayAgain={gameSession.resetToSetup}
-          mode={gameSession.mode}
-          chapterId={gameSession.chapterId}
-          chapterTitle={gameSession.chapterTitle}
-          isChapterComplete={gameSession.chapterId ? isChapterCompleted(gameSession.chapterId) : false}
+          onReturnToChapters={handleReturnToChapters}
+          onNextChapter={gameSession.mode === 'story' && nextChapter ? handleNextChapter : null}
         />
       )}
     </section>

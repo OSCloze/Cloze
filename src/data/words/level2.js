@@ -1,6 +1,6 @@
-// Level 2: Chapter 2 Vocabulary (3 words)
+// Level 2: Identity
 export const level2Words = [
-    { id: 31, character: "猫", pinyin: "māo", meaning: "cat", level: 2, permanent: false },
-    { id: 32, character: "狗", pinyin: "gǒu", meaning: "dog", level: 2, permanent: false },
-    { id: 33, character: "鱼", pinyin: "yú", meaning: "fish", level: 2, permanent: false }
+    { id: 201, character: "叫", pinyin: "jiào", meaning: "to be called", level: 2, permanent: false },
+    { id: 202, character: "名字", pinyin: "míng zi", meaning: "name", level: 2, permanent: false },
+    { id: 203, character: "朋友", pinyin: "péng you", meaning: "friend", level: 2, permanent: false }
 ];

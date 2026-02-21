@@ -1,3 +1,4 @@
+// src/hooks/useStoryProgress.js
 import { useState, useEffect } from 'react';
 import { chapters } from '../data';
 
@@ -43,16 +44,8 @@ export function useStoryProgress() {
 
     const startChapter = (chapterId) => {
         setCurrentChapter(chapterId);
-        // Reset progress for this chapter when starting
-        setChapterProgress(prev => ({
-            ...prev,
-            [chapterId]: {
-                completed: false,
-                revealedSentences: [],
-                currentSentenceIndex: 0
-            }
-        }));
     };
+
     const markSentenceRevealed = (chapterId, sentenceId) => {
         setChapterProgress(prev => {
             const chapter = prev[chapterId];
@@ -60,11 +53,28 @@ export function useStoryProgress() {
 
             if (!chapter.revealedSentences.includes(sentenceId)) {
                 const updatedRevealed = [...chapter.revealedSentences, sentenceId];
-                const chapterSentences = chapters.find(c => c.id === chapterId)?.sentences || [];
-                const isCompleted = updatedRevealed.length === chapterSentences.length;
 
-                if (isCompleted && !completedChapters.includes(chapterId)) {
-                    setCompletedChapters(prev => [...prev, chapterId]);
+                const chapterData = chapters.find(c => c.id === chapterId);
+                const practiceSentences = chapterData?.sentences?.filter(s => s.type === 'practice') || [];
+                const totalPracticeSentences = practiceSentences.length;
+
+                const revealedPracticeCount = updatedRevealed.filter(id => {
+                    const sentence = chapterData?.sentences?.find(s => s.id === id);
+                    return sentence?.type === 'practice';
+                }).length;
+
+                const isCompleted = revealedPracticeCount === totalPracticeSentences && totalPracticeSentences > 0;
+
+                if (isCompleted) {
+                    setTimeout(() => {
+                        setCompletedChapters(current => {
+                            if (!current.includes(chapterId)) {
+                                console.log(`Chapter ${chapterId} completed!`);
+                                return [...current, chapterId];
+                            }
+                            return current;
+                        });
+                    }, 0);
                 }
 
                 return {
@@ -72,8 +82,7 @@ export function useStoryProgress() {
                     [chapterId]: {
                         ...chapter,
                         revealedSentences: updatedRevealed,
-                        completed: isCompleted,
-                        // Don't update currentSentenceIndex - we always start from beginning
+                        completed: isCompleted
                     }
                 };
             }
@@ -81,12 +90,27 @@ export function useStoryProgress() {
         });
     };
 
-    // Replace the existing getCurrentSentence function:
+    const replayChapter = (chapterId) => {
+        // Create a temporary replay session without modifying permanent progress
+        const chapter = chapters.find(c => c.id === chapterId);
+        if (!chapter) return;
+
+        // Set replay flag - this will trigger a fresh session in PlayPage
+        // but won't modify the stored progress
+        setReplayChapterId(chapterId);
+
+        // Don't modify completedChapters or chapterProgress
+        // This preserves the user's actual progress
+    };
+
     const getCurrentSentence = (chapterId) => {
         const chapter = chapters.find(c => c.id === chapterId);
         if (!chapter) return null;
 
-        // Always return the first sentence, regardless of progress
+        const progress = chapterProgress[chapterId];
+        if (progress && progress.currentSentenceIndex !== undefined && !replayChapterId) {
+            return chapter.sentences[progress.currentSentenceIndex];
+        }
         return chapter.sentences[0];
     };
 
@@ -96,17 +120,18 @@ export function useStoryProgress() {
             if (!chapter) return prev;
 
             const chapterSentences = chapters.find(c => c.id === chapterId)?.sentences || [];
-            const nextIndex = chapter.currentSentenceIndex + 1;
+            const nextIndex = (chapter.currentSentenceIndex || 0) + 1;
 
-            if (nextIndex >= chapterSentences.length) return prev;
-
-            return {
-                ...prev,
-                [chapterId]: {
-                    ...chapter,
-                    currentSentenceIndex: nextIndex
-                }
-            };
+            if (nextIndex < chapterSentences.length) {
+                return {
+                    ...prev,
+                    [chapterId]: {
+                        ...chapter,
+                        currentSentenceIndex: nextIndex
+                    }
+                };
+            }
+            return prev;
         });
     };
 
@@ -114,24 +139,59 @@ export function useStoryProgress() {
         return completedChapters.includes(chapterId);
     };
 
+    const isChapterCompletelyFinished = (chapterId) => {
+        const chapter = chapters.find(c => c.id === chapterId);
+        if (!chapter) return false;
+
+        const practiceSentences = chapter.sentences.filter(s => s.type === 'practice');
+        const totalPractice = practiceSentences.length;
+
+        const progress = chapterProgress[chapterId];
+        if (!progress) return false;
+
+        const revealedPractice = progress.revealedSentences.filter(id => {
+            const sentence = chapter.sentences.find(s => s.id === id);
+            return sentence?.type === 'practice';
+        }).length;
+
+        return revealedPractice === totalPractice && totalPractice > 0;
+    };
+
     const getChapterProgress = (chapterId) => {
-        return chapterProgress[chapterId] || {
-            revealedSentences: [],
+        const chapter = chapters.find(c => c.id === chapterId);
+        const progress = chapterProgress[chapterId] || {
             completed: false,
+            revealedSentences: [],
             currentSentenceIndex: 0
+        };
+
+        const practiceSentences = chapter?.sentences?.filter(s => s.type === 'practice') || [];
+        const totalPractice = practiceSentences.length;
+        const revealedPractice = progress.revealedSentences.filter(id => {
+            const sentence = chapter?.sentences?.find(s => s.id === id);
+            return sentence?.type === 'practice';
+        }).length;
+
+        return {
+            ...progress,
+            totalPractice,
+            revealedPractice,
+            practicePercentage: totalPractice > 0 ? Math.round((revealedPractice / totalPractice) * 100) : 0,
+            totalSentences: chapter?.sentences?.length || 0,
+            revealedCount: progress.revealedSentences.length
         };
     };
 
     const getChapterStats = (chapterId) => {
         const chapter = chapters.find(c => c.id === chapterId);
-        const progress = chapterProgress[chapterId];
-        const revealedCount = progress?.revealedSentences?.length || 0;
-        const totalSentences = chapter?.sentences?.length || 0;
+        const progress = getChapterProgress(chapterId);
 
         return {
-            revealedCount,
-            totalSentences,
-            percentage: totalSentences > 0 ? Math.round((revealedCount / totalSentences) * 100) : 0,
+            revealedCount: progress.revealedCount,
+            totalSentences: progress.totalSentences,
+            revealedPractice: progress.revealedPractice,
+            totalPractice: progress.totalPractice,
+            percentage: progress.practicePercentage,
             isCompleted: completedChapters.includes(chapterId)
         };
     };
@@ -170,9 +230,11 @@ export function useStoryProgress() {
         setReplayChapterId,
         startChapter,
         markSentenceRevealed,
+        replayChapter,
         getCurrentSentence,
         moveToNextSentence,
         isChapterCompleted,
+        isChapterCompletelyFinished,
         getChapterProgress,
         getChapterStats,
         resetStoryProgress,
