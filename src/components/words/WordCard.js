@@ -1,13 +1,9 @@
 // src/components/words/WordCard.js
 import React from 'react';
 
-export default function WordCard({ word, masteryCount, isSelected, onClick, isFoundation }) {
-  // Determine card class based on mastery and foundation status
+export default function WordCard({ word, masteryCount, isSelected, onClick }) {
+  // Determine card class based on mastery
   const getCardClass = () => {
-    if (isFoundation) {
-      return 'word-card foundation-word';
-    }
-
     if (masteryCount >= 10) {
       return 'word-card mastered-blue';
     }
@@ -28,10 +24,10 @@ export default function WordCard({ word, masteryCount, isSelected, onClick, isFo
       className={`${getCardClass()} ${isSelected ? 'selected' : ''}`}
       onClick={onClick}
     >
-      <span className="word-character">{word.character}</span>
+      <span className="word-character">{word.word}</span>
       <span className="word-pinyin">{word.pinyin}</span>
       <span className="word-meaning">{word.meaning}</span>
-      {!isFoundation && masteryCount > 0 && (
+      {masteryCount > 0 && (
         <div className="word-mastery">
           <span className="mastery-badge">
             ✓ {masteryCount}

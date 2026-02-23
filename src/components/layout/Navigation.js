@@ -7,7 +7,7 @@ export default function Navigation() {
 
   const navItems = [
     { id: 'play', label: 'Play' },
-    { id: 'chapters', label: 'Chapters' },  // Changed from 'levels' or 'sentences'
+    { id: 'levels', label: 'HSK Levels' },  // Changed from 'levels' or 'sentences'
     { id: 'settings', label: 'Settings' }
   ];
 

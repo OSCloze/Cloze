@@ -7,7 +7,6 @@ export default function WordGrid({
   wordMastery,
   selectedWordId,
   onWordClick,
-  isFoundation = false
 }) {
   return (
     <div className="word-grid">
@@ -22,7 +21,6 @@ export default function WordGrid({
             masteryCount={masteryCount}
             isSelected={isSelected}
             onClick={() => onWordClick(word)}
-            isFoundation={isFoundation}
           />
         );
       })}

@@ -93,9 +93,6 @@ const ReviewScreen = ({ reviewItems, onPlayAgain, onReturnToChapters, onNextChap
             <button onClick={onPlayAgain} className="btn-primary">
               Play Again
             </button>
-            <button onClick={onReturnToChapters} className="btn-secondary">
-              Return to Chapters
-            </button>
           </>
         )}
       </div>

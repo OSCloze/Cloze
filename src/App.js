@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import Navigation from './components/layout/Navigation';
 import PlayPage from './pages/PlayPage';
-import ChaptersPage from './pages/ChaptersPage';
+import LevelsPage from './pages/LevelsPage';
 import SettingsPage from './pages/SettingsPage';
 import './App.css';
 
@@ -40,7 +40,7 @@ function AppContent() {
       <Navigation />
       <div className="content">
         {currentPage === 'play' && <PlayPage />}
-        {currentPage === 'chapters' && <ChaptersPage />}
+        {currentPage === 'levels' && <LevelsPage />}
         {currentPage === 'settings' && <SettingsPage />}
       </div>
     </div>
