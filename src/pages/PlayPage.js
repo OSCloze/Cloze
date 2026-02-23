@@ -50,7 +50,7 @@ export default function PlayPage() {
   const progress = currentChapter ? getChapterProgress(currentChapter.id) : null;
   const isFirstTimeInChapter = currentChapter && progress && progress.revealedSentences.length === 0;
 
-  // Helper to start a chapter by ID (used for replay and next chapter)
+  // Helper to start a chapter by ID
   const startChapterById = (chapterId) => {
     const chapter = chapters.find(c => c.id === chapterId);
     if (!chapter) return;
@@ -68,12 +68,9 @@ export default function PlayPage() {
       setCurrentChapterWords(chapterWords);
       setShowVocabulary(true);
     } else {
-      const currentSentence = getCurrentSentence(chapterId);
-      const remainingSentences = chapter.sentences.slice(
-        chapter.sentences.findIndex(s => s.id === currentSentence?.id)
-      );
+      // Always start from the beginning for continued chapters too
       gameSession.startSession(
-        remainingSentences,
+        chapter.sentences, // Use all sentences from the beginning
         'story',
         chapterId,
         chapter.title,
@@ -125,12 +122,10 @@ export default function PlayPage() {
           setCurrentChapterWords(chapterWords);
           setShowVocabulary(true);
         } else {
-          const currentSentence = getCurrentSentence(gameSession.chapterId);
-          const remainingSentences = chapter.sentences.slice(
-            chapter.sentences.findIndex(s => s.id === currentSentence?.id)
-          );
+          // Always start from the beginning, not from where they left off
+          // Just use the full chapter sentences array
           gameSession.startSession(
-            remainingSentences,
+            chapter.sentences, // Use all sentences from the beginning
             'story',
             gameSession.chapterId,
             chapter.title,
@@ -145,12 +140,9 @@ export default function PlayPage() {
     setShowVocabulary(false);
     const chapter = chapters.find(c => c.id === gameSession.chapterId);
     if (chapter) {
-      const currentSentence = getCurrentSentence(gameSession.chapterId);
-      const remainingSentences = chapter.sentences.slice(
-        chapter.sentences.findIndex(s => s.id === currentSentence?.id)
-      );
+      // Always start from the beginning after vocabulary
       gameSession.startSession(
-        remainingSentences,
+        chapter.sentences, // Use all sentences from the beginning
         'story',
         gameSession.chapterId,
         chapter.title,

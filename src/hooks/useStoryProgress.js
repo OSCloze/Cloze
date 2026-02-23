@@ -107,14 +107,13 @@ export function useStoryProgress() {
         const chapter = chapters.find(c => c.id === chapterId);
         if (!chapter) return null;
 
-        const progress = chapterProgress[chapterId];
-        if (progress && progress.currentSentenceIndex !== undefined && !replayChapterId) {
-            return chapter.sentences[progress.currentSentenceIndex];
-        }
+        // Always return the first sentence, regardless of progress
+        // This ensures chapters always start from the beginning
         return chapter.sentences[0];
     };
 
     const moveToNextSentence = (chapterId) => {
+        // This function can remain but won't affect chapter starting point
         setChapterProgress(prev => {
             const chapter = prev[chapterId];
             if (!chapter) return prev;

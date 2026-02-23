@@ -1,248 +1,209 @@
-// Chapter 3: Zhang
+// Chapter 3: The Cook's Memory
 import { getImagePath } from '../../utils/pathHelpers';
 
 export const chapter3 = {
     id: 3,
-    title: "Zhang",
-    description: "Meet a new friend and share a moment of happiness.",
+    title: "The Cook's Memory",
+    description: "Meet Li Wei, the cook, and share a moment of joy through food.",
     level: 3,
-    image: getImagePath("/images/chapter3/main.png"),
-    words: [301, 302, 303], // happy, together, meet
+    image: "", // Empty for now - you can add manually later
+    words: [301, 302, 303], // 想起来, 开心, 李伟
     sentences: [
-        // 1. Narrative: Zhang's attention
+        // 1. Narrative: Li Wei bursts in
         {
             id: 301,
             type: "narrative",
             level: 3,
             topic: "Narrative",
-            sceneDetails: "Zhāng sets his canvas against the table and turns his attention to you. His smile is warm but curious.",
-            image: getImagePath("/images/chapter3/zhang_smiles.png"),
+            sceneDetails: "The shop falls silent. Even the kettle seems to hush. Before anyone can speak, the kitchen door bursts open.",
+            image: "", // Empty for now
         },
-        // 2. Practice: This is Zhang. He is a friend.
+        // 2. Practice: I remembered!
         {
             id: 302,
             type: "practice",
-            targetWordId: 203, // 朋友 (from level2)
-            blankWordId: 203,
-            level: 3,
-            difficulty: 1,
-            topic: "Introduction",
-            speaker: "Lǎo Chá",
-            speakerImage: getImagePath("/images/speakers/laocha.png"),
-            image: getImagePath("/images/chapter3/laocha_gestures.png"),
-            sceneDetails: "Lǎo Chá gestures to the man who just sat down next to you.",
-            sentence: "这是Zhāng。他是 ___ 。",
-            answer: "朋友",
-            pinyin: "zhè shì Zhāng. tā shì péng you",
-            nativeSentence: "This is Zhang. He is a friend.",
-            explanation: "朋友 means 'friend'.",
-            words: [
-                { text: "这", wordId: 7 },
-                { text: "是", wordId: 12 },
-                { text: "Zhāng", isPunctuation: false },
-                { text: "。", isPunctuation: true },
-                { text: "他", wordId: 3 },
-                { text: "是", wordId: 12 },
-                { text: "朋友", wordId: 203 },
-                { text: "。", isPunctuation: true }
-            ]
-        },
-        // 3. Practice: Hello, what is your name?
-        {
-            id: 303,
-            type: "practice",
-            targetWordId: 202, // 名字 (from level2)
-            blankWordId: 202,
-            level: 3,
-            difficulty: 1,
-            topic: "Greeting",
-            speaker: "Zhāng",
-            speakerImage: getImagePath("/images/speakers/zhang.png"),
-            image: getImagePath("/images/chapter3/zhang_hello.png"),
-            sceneDetails: "Zhāng turns to you with a warm smile, eager to get to know you.",
-            sentence: "你好，你叫什么 ___ ？",
-            answer: "名字",
-            pinyin: "nǐ hǎo, nǐ jiào shén me míng zi",
-            nativeSentence: "Hello, what is your name?",
-            explanation: "名字 means 'name'.",
-            words: [
-                { text: "你", wordId: 2 },
-                { text: "好", wordId: 21 },
-                { text: "，", isPunctuation: true },
-                { text: "你", wordId: 2 },
-                { text: "叫", wordId: 201 },
-                { text: "什么", wordId: 20 },
-                { text: "名字", wordId: 202 },
-                { text: "？", isPunctuation: true }
-            ]
-        },
-        // 5. Practice: You are very happy!
-        {
-            id: 305,
-            type: "practice",
-            targetWordId: 301, // 高兴
+            targetWordId: 301, // 想起来
             blankWordId: 301,
             level: 3,
-            difficulty: 1,
-            topic: "Emotion",
-            speaker: "Zhāng",
-            speakerImage: getImagePath("/images/speakers/zhang.png"),
-            image: getImagePath("/images/chapter3/zhang_happy.png"),
-            sceneDetails: "Zhāng smiles warmly at you across the table.",
-            sentence: "你 ___ 高兴！",
-            answer: "很",
-            pinyin: "nǐ hěn gāo xìng",
-            nativeSentence: "You are very happy!",
-            explanation: "很 is used before adjectives. 高兴 means 'happy'.",
+            difficulty: 2,
+            topic: "Exclamation",
+            speaker: "Li Wei",
+            speakerImage: getImagePath("/images/speakers/liwei.webp"),
+            image: "", // Empty for now
+            sceneDetails: "A man in a chef's coat runs in, his face bright with excitement. He's holding a small, worn notebook.",
+            sentence: "我___了！",
+            answer: "想起来",
+            pinyin: "wǒ xiǎng qǐ lái le",
+            nativeSentence: "I remembered!",
+            explanation: "想起来 means 'to remember' or 'to recall'. 了 indicates a change or completion.",
             words: [
-                { text: "你", wordId: 2 },
-                { text: "很", wordId: 17 },
-                { text: "高兴", wordId: 301 },
+                { text: "我", wordId: 1 },
+                { text: "想起来", wordId: 301 },
+                { text: "了", wordId: 24 },
                 { text: "！", isPunctuation: true }
             ]
         },
-        // 6. Practice: I am also happy.
+        // 3. Practice: Eat this!
+        {
+            id: 303,
+            type: "practice",
+            targetWordId: 37, // 吃 (from foundation)
+            blankWordId: 37,
+            level: 3,
+            difficulty: 1,
+            topic: "Offer",
+            speaker: "Li Wei",
+            speakerImage: getImagePath("/images/speakers/liwei.webp"),
+            image: "", // Empty for now
+            sceneDetails: "He places a small bowl in front of you. Steam rises from it, carrying a rich, delicious smell.",
+            sentence: "___这个！",
+            answer: "吃",
+            pinyin: "chī zhè ge",
+            nativeSentence: "Eat this!",
+            explanation: "吃 means 'to eat'. This is a friendly command to try the food.",
+            words: [
+                { text: "吃", wordId: 37 },
+                { text: "这", wordId: 20 },
+                { text: "个", wordId: 36 },
+                { text: "！", isPunctuation: true }
+            ]
+        },
+        // 4. Practice: Do you like it?
+        {
+            id: 304,
+            type: "practice",
+            targetWordId: 40, // 喜欢 (from foundation)
+            blankWordId: 40,
+            level: 3,
+            difficulty: 1,
+            topic: "Question",
+            speaker: "Li Wei",
+            speakerImage: getImagePath("/images/speakers/liwei.webp"),
+            image: "", // Empty for now
+            sceneDetails: "He watches you with hopeful eyes, practically bouncing on his heels.",
+            sentence: "你___它吗？",
+            answer: "喜欢",
+            pinyin: "nǐ xǐ huān tā ma",
+            nativeSentence: "Do you like it?",
+            explanation: "喜欢 means 'to like'. 它 means 'it' (referring to the food).",
+            words: [
+                { text: "你", wordId: 2 },
+                { text: "喜欢", wordId: 40 },
+                { text: "它", wordId: 5 },
+                { text: "吗", wordId: 22 },
+                { text: "？", isPunctuation: true }
+            ]
+        },
+        // 5. Practice: I like it.
+        {
+            id: 305,
+            type: "practice",
+            targetWordId: 40, // 喜欢 (from foundation)
+            blankWordId: 40,
+            level: 3,
+            difficulty: 1,
+            topic: "Response",
+            speaker: "Player",
+            speakerImage: getImagePath("/images/speakers/player.webp"),
+            image: "", // Empty for now
+            sceneDetails: "You take a bite and your eyes widen. It's amazing.",
+            sentence: "我___它。",
+            answer: "喜欢",
+            pinyin: "wǒ xǐ huān tā",
+            nativeSentence: "I like it.",
+            explanation: "我喜欢它 means 'I like it'.",
+            words: [
+                { text: "我", wordId: 1 },
+                { text: "喜欢", wordId: 40 },
+                { text: "它", wordId: 5 },
+                { text: "。", isPunctuation: true }
+            ]
+        },
+        // 6. Practice: Today I am very happy!
         {
             id: 306,
             type: "practice",
-            targetWordId: 301, // 高兴
-            blankWordId: 301,
+            targetWordId: 302, // 开心
+            blankWordId: 302,
             level: 3,
-            difficulty: 2,
+            difficulty: 1,
             topic: "Emotion",
-            speaker: "Player",
-            speakerImage: getImagePath("/images/speakers/player.png"),
-            image: getImagePath("/images/chapter3/player_also.png"),
-            sceneDetails: "You smile back, feeling welcome in their company.",
-            sentence: "我 ___ 高兴。",
-            answer: "也",
-            pinyin: "wǒ yě gāo xìng",
-            nativeSentence: "I am also happy.",
-            explanation: "也 means 'also'.",
+            speaker: "Li Wei",
+            speakerImage: getImagePath("/images/speakers/liwei.webp"),
+            image: "", // Empty for now
+            sceneDetails: "He pumps his fist in the air triumphantly.",
+            sentence: "今天我很___！",
+            answer: "开心",
+            pinyin: "jīn tiān wǒ hěn kāi xīn",
+            nativeSentence: "Today I am very happy!",
+            explanation: "开心 means 'happy' or 'joyful'. It's similar to 高兴 but often used for momentary happiness.",
             words: [
+                { text: "今天", wordId: 51 },
                 { text: "我", wordId: 1 },
-                { text: "也", wordId: 15 },
-                { text: "高兴", wordId: 301 },
-                { text: "。", isPunctuation: true }
+                { text: "很", wordId: 12 },
+                { text: "开心", wordId: 302 },
+                { text: "！", isPunctuation: true }
             ]
         },
-        // 7. Practice: We drink tea together.
+        // 7. Practice: This is very good!
         {
             id: 307,
             type: "practice",
-            targetWordId: 302, // 一起
-            blankWordId: 302,
+            targetWordId: 20, // 这 (from foundation)
+            blankWordId: 20,
             level: 3,
-            difficulty: 2,
-            topic: "Activity",
-            speaker: "Zhāng",
-            speakerImage: getImagePath("/images/speakers/zhang.png"),
-            image: getImagePath("/images/chapter3/zhang_raise.png"),
-            sceneDetails: "Zhāng raises his cup toward you, inviting you to join.",
-            sentence: "我们 ___ 喝茶。",
-            answer: "一起",
-            pinyin: "wǒ men yī qǐ hē chá",
-            nativeSentence: "We drink tea together.",
-            explanation: "一起 means 'together'.",
+            difficulty: 1,
+            topic: "Opinion",
+            speaker: "Lao Cha",
+            speakerImage: getImagePath("/images/speakers/laocha.webp"),
+            image: "", // Empty for now
+            sceneDetails: "Lao Cha tastes it too and nods with approval.",
+            sentence: "___很好！",
+            answer: "这",
+            pinyin: "zhè hěn hǎo",
+            nativeSentence: "This is very good!",
+            explanation: "这 means 'this'. 很好 means 'very good'.",
             words: [
-                { text: "我们", wordId: 6 }, // 们 is plural suffix, but we need "我们" as a word? Actually "我们" is 我+们, we don't have a combined word. We'll split into 我 and 们.
-                { text: "我", wordId: 1 },
-                { text: "们", wordId: 6 },
-                { text: "一起", wordId: 302 },
-                { text: "喝", wordId: 104 },
-                { text: "茶", wordId: 101 },
-                { text: "。", isPunctuation: true }
+                { text: "这", wordId: 20 },
+                { text: "很", wordId: 12 },
+                { text: "好", wordId: 13 },
+                { text: "！", isPunctuation: true }
             ]
         },
-        // 8. Practice: We all drink tea.
+        // 8. Practice: I also like it!
         {
             id: 308,
             type: "practice",
-            targetWordId: 104, // 喝
-            blankWordId: 104,
+            targetWordId: 10, // 也 (from foundation)
+            blankWordId: 10,
             level: 3,
-            difficulty: 2,
-            topic: "Activity",
-            speaker: "Lǎo Chá",
-            speakerImage: getImagePath("/images/speakers/laocha.png"),
-            image: getImagePath("/images/chapter3/laocha_pour.png"),
-            sceneDetails: "Lǎo Chá pours more tea for everyone at the table.",
-            sentence: "我们都 ___ 茶。",
-            answer: "喝",
-            pinyin: "wǒ men dōu hē chá",
-            nativeSentence: "We all drink tea.",
-            explanation: "都 means 'all'.",
+            difficulty: 1,
+            topic: "Opinion",
+            speaker: "Zhang",
+            speakerImage: getImagePath("/images/speakers/zhang.webp"),
+            image: "", // Empty for now
+            sceneDetails: "Zhang takes a bite and his sad expression lifts, just for a moment.",
+            sentence: "我___喜欢它。",
+            answer: "也",
+            pinyin: "wǒ yě xǐ huān tā",
+            nativeSentence: "I also like it.",
+            explanation: "也 means 'also'. 我也喜欢它 means 'I also like it'.",
             words: [
                 { text: "我", wordId: 1 },
-                { text: "们", wordId: 6 },
-                { text: "都", wordId: 19 },
-                { text: "喝", wordId: 104 },
-                { text: "茶", wordId: 101 },
+                { text: "也", wordId: 10 },
+                { text: "喜欢", wordId: 40 },
+                { text: "它", wordId: 5 },
                 { text: "。", isPunctuation: true }
             ]
         },
-        // 9. Practice: Very happy to meet you.
+        // 9. Narrative: A moment of connection
         {
             id: 309,
-            type: "practice",
-            targetWordId: 303, // 认识
-            blankWordId: 303,
-            level: 3,
-            difficulty: 2,
-            topic: "Greeting",
-            speaker: "Zhāng",
-            speakerImage: getImagePath("/images/speakers/zhang.png"),
-            image: getImagePath("/images/chapter3/zhang_nod.png"),
-            sceneDetails: "Zhāng nods at you politely as new friends do.",
-            sentence: "很高 ___ 你。",
-            answer: "认识",
-            pinyin: "hěn gāo xìng rèn shi nǐ",
-            nativeSentence: "Very happy to meet you.",
-            explanation: "认识 means 'to meet' or 'to know'. 很高兴认识你 is a common phrase when meeting someone.",
-            words: [
-                { text: "很", wordId: 17 },
-                { text: "高兴", wordId: 301 },
-                { text: "认识", wordId: 303 },
-                { text: "你", wordId: 2 },
-                { text: "。", isPunctuation: true }
-            ]
-        },
-        // 10. Practice: I am also very happy to meet you.
-        {
-            id: 310,
-            type: "practice",
-            targetWordId: 303, // 认识
-            blankWordId: 303,
-            level: 3,
-            difficulty: 3,
-            topic: "Greeting",
-            speaker: "Player",
-            speakerImage: getImagePath("/images/speakers/player.png"),
-            image: getImagePath("/images/chapter3/player_meet.png"),
-            sceneDetails: "You respond warmly, happy to have made a new friend.",
-            sentence: "我 ___ 很高兴认识你。",
-            answer: "也",
-            pinyin: "wǒ yě hěn gāo xìng rèn shi nǐ",
-            nativeSentence: "I am also very happy to meet you.",
-            explanation: "也 means 'also'.",
-            words: [
-                { text: "我", wordId: 1 },
-                { text: "也", wordId: 15 },
-                { text: "很", wordId: 17 },
-                { text: "高兴", wordId: 301 },
-                { text: "认识", wordId: 303 },
-                { text: "你", wordId: 2 },
-                { text: "。", isPunctuation: true }
-            ]
-        },
-        // 11. Narrative: Three together
-        {
-            id: 311,
             type: "narrative",
             level: 3,
             topic: "Narrative",
-            sceneDetails: "The three of you sit together, tea warming your hands. Zhāng seems comfortable here, like this shop is a second home. You notice him glance at his canvas occasionally, as if deciding whether to show you what's inside.",
-            image: getImagePath("/images/chapter3/three_together.png"),
+            sceneDetails: "Li Wei explains that he lost his recipe book years ago. Today, he finally remembered one of the dishes. Everyone eats together, and for a little while, the tea shop feels like home.",
+            image: "", // Empty for now
         }
     ]
 };

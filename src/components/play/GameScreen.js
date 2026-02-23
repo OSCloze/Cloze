@@ -26,14 +26,20 @@ export default function GameScreen({
   // Check if we're in practice mode
   const isPracticeMode = mode === 'practice';
 
+  // Check if there's speaker information to display (hide speaker details in practice mode)
+  const hasSpeaker = !isPracticeMode && !isNarrative && currentSentence?.speaker;
+
+  // Check if scene details should show (only in story mode)
+  const showSceneDetails = !isPracticeMode && (currentSentence?.sceneDetails || currentSentence?.image);
+
   return (
     <div className="play-content play-content--game">
       <div className="main">
         <div className="game-header">
           <p className="progress">
             {isNarrative
-              ? `Scene ${currentIndex + 1} of ${sessionSentences.length}`
-              : `Question ${currentIndex + 1} of ${sessionSentences.length}`
+              ? `Page ${currentIndex + 1} of ${sessionSentences.length}`
+              : `Page ${currentIndex + 1} of ${sessionSentences.length}`
             }
           </p>
           {!isNarrative && (
@@ -46,29 +52,35 @@ export default function GameScreen({
           )}
         </div>
 
-        {/* Story context with optional scene image and speaker portrait */}
-        <div className="story-context">
-          {/* Scene image (optional) */}
-          {currentSentence?.image && (
-            <div className="scene-image-container">
-              <img
-                src={currentSentence.image}
-                alt="Scene"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
-            </div>
-          )}
+        {/* Scene Details Container - Only shows in story mode */}
+        {showSceneDetails && (
+          <div className="story-scene-details-container">
+            {/* Scene image (optional) */}
+            {currentSentence?.image && (
+              <div className="scene-image-container">
+                <img
+                  src={currentSentence.image}
+                  alt="Scene"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
+            )}
 
-          {/* Scene details - show for both narrative and practice, but not in practice mode? 
-              You might want to keep scene details for context even in practice mode */}
-          {currentSentence?.sceneDetails && !isPracticeMode && (
-            <div className="story-scene-details">{currentSentence.sceneDetails}</div>
-          )}
+            {/* Scene text */}
+            {currentSentence?.sceneDetails && (
+              <div className="story-scene-details">
+                {currentSentence.sceneDetails}
+              </div>
+            )}
+          </div>
+        )}
 
-          {/* Speaker row - only show in story mode for non-narrative sentences */}
-          {!isPracticeMode && !isNarrative && currentSentence?.speaker && (
+        {/* Story context - Only shows when there's speaker information and not in practice mode */}
+        {hasSpeaker && (
+          <div className="story-context">
+            {/* Speaker row */}
             <div className="story-speaker-row">
               {currentSentence.speakerImage && (
                 <div className="speaker-portrait">
@@ -89,8 +101,8 @@ export default function GameScreen({
                 <div className="speaker-line">{currentSentence.nativeSentence}</div>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Sentence Display - only for practice scenes */}
         {!isNarrative && (
@@ -103,6 +115,13 @@ export default function GameScreen({
             onCheck={onCheck}
             onWordClick={onWordClick}
           />
+        )}
+
+        {/* English translation line - Show in both story and practice mode, but without speaker name/image in practice */}
+        {!isNarrative && currentSentence?.nativeSentence && (
+          <div className={`english-translation ${isPracticeMode ? 'practice-mode' : ''}`}>
+            {currentSentence.nativeSentence}
+          </div>
         )}
 
         {/* Translation Box */}

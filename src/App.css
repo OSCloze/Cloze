@@ -370,16 +370,17 @@ body {
   background: transparent;
   color: var(--accent2);
   border: 1.5px solid var(--border-gold);
-  padding: 0.3rem 1rem;
+  padding: 0.5rem 1rem;
   font-family: var(--font-head);
   font-weight: 600;
   font-size: 0.8rem;
   border-radius: 30px;
+  margin-bottom: 15px;
   cursor: pointer;
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: .5rem;
   white-space: nowrap;
   width: auto;
   box-shadow: 0 2px 6px var(--glow-gold);
@@ -388,12 +389,7 @@ body {
 .chapter-replay-pill:hover {
   background: rgba(192, 120, 0, 0.1);
   border-color: var(--accent2);
-  transform: translateY(-2px);
   box-shadow: 0 4px 10px var(--glow-gold);
-}
-
-.chapter-replay-pill:active {
-  transform: scale(0.97);
 }
 
 /* ── PLAY CONFIG ── */
@@ -512,7 +508,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: .5rem;
   padding: 1rem;
   background: var(--surface2);
   border-radius: var(--radius);
@@ -937,6 +933,12 @@ body {
   border-width: 2px;
 }
 
+.word-card.mastered-green {
+  background: rgba(58, 118, 136, 0.2);
+  border-color: rgb(58, 118, 136);
+  border-width: 2px;
+}
+
 .word-card.foundation-word {
   background: rgba(0, 120, 200, 0.1);
   border-color: #0078c8;
@@ -1356,13 +1358,6 @@ body {
 }
 
 /* Story Context in Game Screen */
-.story-context {
-  background: var(--surface2);
-  border-left: 4px solid var(--accent2);
-  padding: 1rem;
-  border-radius: var(--radius);
-  margin-bottom: 1rem;
-}
 
 .story-title-row {
   display: flex;
@@ -1385,15 +1380,6 @@ body {
   font-weight: 500;
 }
 
-.story-scene-details {
-  font-size: 0.95rem;
-  color: var(--muted);
-  font-style: italic;
-  line-height: 1.6;
-  padding: 0.5rem 0 0.25rem 0;
-  border-top: 1px dashed var(--border);
-  margin-top: 0.5rem;
-}
 
 /* Mode Selector */
 .mode-selector {
@@ -1702,15 +1688,16 @@ body {
 /* Story context with speaker portrait */
 .story-context {
   background: var(--surface2);
+  border: 1px solid #ebc20f8c;
   border-left: 4px solid var(--accent2);
-  padding: 1rem;
+  padding: .5rem;
   border-radius: var(--radius);
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .story-speaker-row {
   display: flex;
-  gap: 1rem;
+  gap: .5rem;
   align-items: center;
 }
 
@@ -1769,7 +1756,6 @@ body {
   line-height: 1.5;
   padding-top: 0.5rem;
   margin-top: 0.5rem;
-  border-top: 1px dashed var(--border);
   margin-bottom: 1rem;
 }
 
@@ -1915,4 +1901,65 @@ body {
     font-size: 0.75rem;
     padding: 0.5rem 0.25rem;
   }
+}
+
+/* Add to your main CSS file - matches your settings panel styling */
+
+.backup-restore-container {
+  margin-bottom: 2rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.backup-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem 0;
+  flex-wrap: wrap;
+}
+
+.backup-error {
+  background-color: #ffebee;
+  border: 1px solid #ef5350;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  color: #c62828;
+  font-size: 0.9rem;
+}
+
+/* Reuse your existing button styles */
+.backup-actions .btn-primary,
+.backup-actions .btn-secondary {
+  min-width: 160px;
+}
+
+/* If you want loading states */
+.backup-actions .btn-primary:disabled,
+.backup-actions .btn-secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Add to your main CSS file */
+
+.story-scene-details-container {
+    background: var(--surface2);
+      border: 1px solid rgba(106, 165, 67, 0.486);
+      border-left: 4px solid #276001;
+      padding: 1rem;
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+}
+
+.story-scene-details {
+  font-size: 1rem;
+}
+
+
+/* Make sure the sentence display has proper spacing */
+.sentence-clickable-container {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 }

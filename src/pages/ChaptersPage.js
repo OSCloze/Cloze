@@ -34,7 +34,7 @@ export default function ChaptersPage() {
     };
 
     const handleReplayChapter = (chapterId) => {
-        replayChapter(chapterId); // This sets the replay flag without resetting progress
+        replayChapter(chapterId);
         setCurrentPage('play');
     };
 
@@ -118,8 +118,8 @@ export default function ChaptersPage() {
                         return (
                             <li key={chapter.id} className="chapter-item">
                                 <div
-                                    className={`chapter-header ${isLocked ? 'locked' : ''} ${isExpanded ? 'expanded' : ''} ${isCompleted ? 'completed' : ''}`}
-                                    onClick={() => !isLocked && toggleLevel(`chapter-${chapter.id}`)}
+                                    className={`chapter-header ${isExpanded ? 'expanded' : ''} ${isCompleted ? 'completed' : ''}`}
+                                    onClick={() => toggleLevel(`chapter-${chapter.id}`)}
                                 >
                                     <span className="chapter-expand-icon">
                                         {isExpanded ? '▼' : '▶'}
@@ -129,20 +129,10 @@ export default function ChaptersPage() {
                                     </span>
                                     <span className="chapter-stats">
                                         {chapterWords.length} words
-                                        {!isLocked && practiceSentences.length > 0 && !isCompleted && (
-                                            <span className="chapter-progress-badge">
-                                                {progress.revealed}/{practiceSentences.length}
-                                            </span>
-                                        )}
-                                        {isCompleted && (
-                                            <span className="chapter-complete-badge" title="Chapter completed">
-                                                ✓
-                                            </span>
-                                        )}
                                     </span>
                                 </div>
 
-                                {isExpanded && !isLocked && (
+                                {isExpanded && (
                                     <div className="chapter-content">
                                         {isCompleted && (
                                             <div className="chapter-replay-container">
