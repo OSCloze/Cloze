@@ -3348,5 +3348,1679 @@ export const hsk1Sentences = [
                 { "text": "难", "wordId": 1195 },
                 { "text": "。", "isPunctuation": true }
             ]
+        },
+        {
+            "id": 10196,
+            "topic": "Nouns",
+            "targetWordId": 1196,
+            "answer": "东西",
+            "sentence": "这个 ___ 多少钱？",
+            "pinyin": "zhè gè dōngxi duōshǎo qián",
+            "nativeSentence": "How much is this thing?",
+            "explanation": "东西 means 'thing' or 'object'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "东西", "wordId": 1196 },
+                { "text": "多少", "wordId": 1030 },
+                { "text": "钱", "wordId": 1235 },
+                { "text": "？", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10197,
+            "topic": "Nouns",
+            "targetWordId": 1197,
+            "answer": "事情",
+            "sentence": "我有一件 ___ 要告诉你。",
+            "pinyin": "wǒ yǒu yī jiàn shìqing yào gàosu nǐ",
+            "nativeSentence": "I have something to tell you.",
+            "explanation": "事情 means 'thing' or 'matter'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "件", "wordId": 1269 },
+                { "text": "事情", "wordId": 1197 },
+                { "text": "要", "wordId": 1130 },
+                { "text": "告诉", "wordId": 1123 },
+                { "text": "你", "wordId": 1003 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10198,
+            "topic": "Nouns",
+            "targetWordId": 1198,
+            "answer": "事",
+            "sentence": "这件 ___ 很重要。",
+            "pinyin": "zhè jiàn shì hěn zhòngyào",
+            "nativeSentence": "This matter is very important.",
+            "explanation": "事 means 'thing' or 'matter'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "件", "wordId": 1269 },
+                { "text": "事", "wordId": 1198 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "重要", "wordId": 1424 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10199,
+            "topic": "Location",
+            "targetWordId": 1199,
+            "answer": "地方",
+            "sentence": "北京是个好 ___。",
+            "pinyin": "Běijīng shì gè hǎo dìfang",
+            "nativeSentence": "Beijing is a good place.",
+            "explanation": "地方 means 'place'.",
+            "words": [
+                { "text": "北京", "note": "Beijing" },
+                { "text": "是", "wordId": 1095 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "好", "wordId": 1160 },
+                { "text": "地方", "wordId": 1199 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10200,
+            "topic": "Home",
+            "targetWordId": 1200,
+            "answer": "房间",
+            "sentence": "我的 ___ 很干净。",
+            "pinyin": "wǒ de fángjiān hěn gānjìng",
+            "nativeSentence": "My room is very clean.",
+            "explanation": "房间 means 'room'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "的", "wordId": 1300 },
+                { "text": "房间", "wordId": 1200 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "干净", "note": "干净 means clean" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10201,
+            "topic": "Home",
+            "targetWordId": 1201,
+            "answer": "家",
+            "sentence": "我爱我的 ___。",
+            "pinyin": "wǒ ài wǒ de jiā",
+            "nativeSentence": "I love my home.",
+            "explanation": "家 means 'home' or 'family'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "爱", "wordId": 1129 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "的", "wordId": 1300 },
+                { "text": "家", "wordId": 1201 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10202,
+            "topic": "Places",
+            "targetWordId": 1202,
+            "answer": "学校",
+            "sentence": "我每天去 ___。",
+            "pinyin": "wǒ měitiān qù xuéxiào",
+            "nativeSentence": "I go to school every day.",
+            "explanation": "学校 means 'school'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "每天", "wordId": 1031 },
+                { "text": "去", "wordId": 1099 },
+                { "text": "学校", "wordId": 1202 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10203,
+            "topic": "Places",
+            "targetWordId": 1203,
+            "answer": "医院",
+            "sentence": "他在 ___ 工作。",
+            "pinyin": "tā zài yīyuàn gōngzuò",
+            "nativeSentence": "He works at the hospital.",
+            "explanation": "医院 means 'hospital'.",
+            "words": [
+                { "text": "他", "wordId": 1005 },
+                { "text": "在", "wordId": 1098 },
+                { "text": "医院", "wordId": 1203 },
+                { "text": "工作", "wordId": 1152 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10204,
+            "topic": "Shopping",
+            "targetWordId": 1204,
+            "answer": "商店",
+            "sentence": "这个 ___ 很大。",
+            "pinyin": "zhè gè shāngdiàn hěn dà",
+            "nativeSentence": "This store is very big.",
+            "explanation": "商店 means 'shop' or 'store'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "商店", "wordId": 1204 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "大", "wordId": 1162 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10205,
+            "topic": "Shopping",
+            "targetWordId": 1205,
+            "answer": "超市",
+            "sentence": "我去 ___ 买东西。",
+            "pinyin": "wǒ qù chāoshì mǎi dōngxi",
+            "nativeSentence": "I go to the supermarket to buy things.",
+            "explanation": "超市 means 'supermarket'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "去", "wordId": 1099 },
+                { "text": "超市", "wordId": 1205 },
+                { "text": "买", "wordId": 1113 },
+                { "text": "东西", "wordId": 1196 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10206,
+            "topic": "Shopping",
+            "targetWordId": 1206,
+            "answer": "市场",
+            "sentence": "这个 ___ 很热闹。",
+            "pinyin": "zhè gè shìchǎng hěn rènao",
+            "nativeSentence": "This market is very lively.",
+            "explanation": "市场 means 'market'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "市场", "wordId": 1206 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "热闹", "note": "热闹 means lively" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10207,
+            "topic": "Leisure",
+            "targetWordId": 1207,
+            "answer": "公园",
+            "sentence": "我们去 ___ 散步。",
+            "pinyin": "wǒmen qù gōngyuán sànbù",
+            "nativeSentence": "We go to the park for a walk.",
+            "explanation": "公园 means 'park'.",
+            "words": [
+                { "text": "我们", "wordId": 1002 },
+                { "text": "去", "wordId": 1099 },
+                { "text": "公园", "wordId": 1207 },
+                { "text": "散步", "note": "散步 means to take a walk" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10208,
+            "topic": "Food",
+            "targetWordId": 1208,
+            "answer": "饭店",
+            "sentence": "我们在这家 ___ 吃饭。",
+            "pinyin": "wǒmen zài zhè jiā fàndiàn chīfàn",
+            "nativeSentence": "We eat at this restaurant.",
+            "explanation": "饭店 means 'restaurant'.",
+            "words": [
+                { "text": "我们", "wordId": 1002 },
+                { "text": "在", "wordId": 1098 },
+                { "text": "这", "wordId": 1013 },
+                { "text": "家", "wordId": 1078 },
+                { "text": "饭店", "wordId": 1208 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "饭", "wordId": 1243 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10209,
+            "topic": "Food",
+            "targetWordId": 1209,
+            "answer": "餐厅",
+            "sentence": "学校的 ___ 很好。",
+            "pinyin": "xuéxiào de cāntīng hěn hǎo",
+            "nativeSentence": "The school cafeteria is very good.",
+            "explanation": "餐厅 means 'dining hall' or 'restaurant'.",
+            "words": [
+                { "text": "学校", "wordId": 1202 },
+                { "text": "的", "wordId": 1300 },
+                { "text": "餐厅", "wordId": 1209 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "好", "wordId": 1160 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10210,
+            "topic": "Food",
+            "targetWordId": 1210,
+            "answer": "咖啡馆",
+            "sentence": "我喜欢去 ___。",
+            "pinyin": "wǒ xǐhuān qù kāfēiguǎn",
+            "nativeSentence": "I like going to cafes.",
+            "explanation": "咖啡馆 means 'café'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "去", "wordId": 1099 },
+                { "text": "咖啡馆", "wordId": 1210 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10211,
+            "topic": "Education",
+            "targetWordId": 1211,
+            "answer": "图书馆",
+            "sentence": "我在 ___ 学习。",
+            "pinyin": "wǒ zài túshūguǎn xuéxí",
+            "nativeSentence": "I study at the library.",
+            "explanation": "图书馆 means 'library'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "在", "wordId": 1098 },
+                { "text": "图书馆", "wordId": 1211 },
+                { "text": "学习", "wordId": 1151 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10212,
+            "topic": "Education",
+            "targetWordId": 1212,
+            "answer": "书",
+            "sentence": "我喜欢看 ___。",
+            "pinyin": "wǒ xǐhuān kàn shū",
+            "nativeSentence": "I like reading books.",
+            "explanation": "书 means 'book'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "看", "wordId": 1115 },
+                { "text": "书", "wordId": 1212 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10213,
+            "topic": "Stationery",
+            "targetWordId": 1213,
+            "answer": "本子",
+            "sentence": "这个 ___ 是我的。",
+            "pinyin": "zhè gè běnzi shì wǒ de",
+            "nativeSentence": "This notebook is mine.",
+            "explanation": "本子 means 'notebook'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "本子", "wordId": 1213 },
+                { "text": "是", "wordId": 1095 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "的", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10214,
+            "topic": "Stationery",
+            "targetWordId": 1214,
+            "answer": "笔",
+            "sentence": "我用 ___ 写字。",
+            "pinyin": "wǒ yòng bǐ xiě zì",
+            "nativeSentence": "I use a pen to write characters.",
+            "explanation": "笔 means 'pen'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "用", "wordId": 1146 },
+                { "text": "笔", "wordId": 1214 },
+                { "text": "写", "wordId": 1120 },
+                { "text": "字", "note": "字 means character" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10215,
+            "topic": "Stationery",
+            "targetWordId": 1215,
+            "answer": "纸",
+            "sentence": "请给我一张 ___。",
+            "pinyin": "qǐng gěi wǒ yī zhāng zhǐ",
+            "nativeSentence": "Please give me a piece of paper.",
+            "explanation": "纸 means 'paper'.",
+            "words": [
+                { "text": "请", "wordId": 1138 },
+                { "text": "给", "wordId": 1141 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "张", "wordId": 1265 },
+                { "text": "纸", "wordId": 1215 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10216,
+            "topic": "Furniture",
+            "targetWordId": 1216,
+            "answer": "桌子",
+            "sentence": "___ 上有书。",
+            "pinyin": "zhuōzi shàng yǒu shū",
+            "nativeSentence": "There are books on the table.",
+            "explanation": "桌子 means 'table'.",
+            "words": [
+                { "text": "桌子", "wordId": 1216 },
+                { "text": "上", "wordId": 1350 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "书", "wordId": 1212 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10217,
+            "topic": "Furniture",
+            "targetWordId": 1217,
+            "answer": "椅子",
+            "sentence": "请坐在 ___ 上。",
+            "pinyin": "qǐng zuò zài yǐzi shàng",
+            "nativeSentence": "Please sit on the chair.",
+            "explanation": "椅子 means 'chair'.",
+            "words": [
+                { "text": "请", "wordId": 1138 },
+                { "text": "坐", "wordId": 1107 },
+                { "text": "在", "wordId": 1098 },
+                { "text": "椅子", "wordId": 1217 },
+                { "text": "上", "wordId": 1350 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10218,
+            "topic": "Furniture",
+            "targetWordId": 1218,
+            "answer": "床",
+            "sentence": "我的 ___ 很舒服。",
+            "pinyin": "wǒ de chuáng hěn shūfu",
+            "nativeSentence": "My bed is very comfortable.",
+            "explanation": "床 means 'bed'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "的", "wordId": 1300 },
+                { "text": "床", "wordId": 1218 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "舒服", "note": "舒服 means comfortable" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10219,
+            "topic": "House",
+            "targetWordId": 1219,
+            "answer": "门",
+            "sentence": "请开 ___。",
+            "pinyin": "qǐng kāi mén",
+            "nativeSentence": "Please open the door.",
+            "explanation": "门 means 'door'.",
+            "words": [
+                { "text": "请", "wordId": 1138 },
+                { "text": "开", "wordId": 1147 },
+                { "text": "门", "wordId": 1219 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10220,
+            "topic": "House",
+            "targetWordId": 1220,
+            "answer": "窗",
+            "sentence": "___ 开着。",
+            "pinyin": "chuāng kāizhe",
+            "nativeSentence": "The window is open.",
+            "explanation": "窗 means 'window'.",
+            "words": [
+                { "text": "窗", "wordId": 1220 },
+                { "text": "开", "wordId": 1147 },
+                { "text": "着", "wordId": 1299 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10221,
+            "topic": "House",
+            "targetWordId": 1221,
+            "answer": "窗户",
+            "sentence": "请关 ___。",
+            "pinyin": "qǐng guān chuānghù",
+            "nativeSentence": "Please close the window.",
+            "explanation": "窗户 means 'window'.",
+            "words": [
+                { "text": "请", "wordId": 1138 },
+                { "text": "关", "wordId": 1148 },
+                { "text": "窗户", "wordId": 1221 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10222,
+            "topic": "Household",
+            "targetWordId": 1222,
+            "answer": "灯",
+            "sentence": "请开 ___。",
+            "pinyin": "qǐng kāi dēng",
+            "nativeSentence": "Please turn on the light.",
+            "explanation": "灯 means 'lamp' or 'light'.",
+            "words": [
+                { "text": "请", "wordId": 1138 },
+                { "text": "开", "wordId": 1147 },
+                { "text": "灯", "wordId": 1222 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10223,
+            "topic": "Electronics",
+            "targetWordId": 1223,
+            "answer": "电视",
+            "sentence": "晚上我看 ___。",
+            "pinyin": "wǎnshang wǒ kàn diànshì",
+            "nativeSentence": "In the evening I watch TV.",
+            "explanation": "电视 means 'television'.",
+            "words": [
+                { "text": "晚上", "wordId": 1058 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "看", "wordId": 1115 },
+                { "text": "电视", "wordId": 1223 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10224,
+            "topic": "Electronics",
+            "targetWordId": 1224,
+            "answer": "电脑",
+            "sentence": "我用 ___ 工作。",
+            "pinyin": "wǒ yòng diànnǎo gōngzuò",
+            "nativeSentence": "I use a computer to work.",
+            "explanation": "电脑 means 'computer'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "用", "wordId": 1146 },
+                { "text": "电脑", "wordId": 1224 },
+                { "text": "工作", "wordId": 1152 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10225,
+            "topic": "Electronics",
+            "targetWordId": 1225,
+            "answer": "手机",
+            "sentence": "我的 ___ 没电了。",
+            "pinyin": "wǒ de shǒujī méi diàn le",
+            "nativeSentence": "My phone has no battery.",
+            "explanation": "手机 means 'mobile phone'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "的", "wordId": 1300 },
+                { "text": "手机", "wordId": 1225 },
+                { "text": "没", "wordId": 1303 },
+                { "text": "电", "note": "电 means electricity" },
+                { "text": "了", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10226,
+            "topic": "Communication",
+            "targetWordId": 1226,
+            "answer": "电话",
+            "sentence": "我给你打 ___。",
+            "pinyin": "wǒ gěi nǐ dǎ diànhuà",
+            "nativeSentence": "I'll call you.",
+            "explanation": "电话 means 'telephone'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "给", "wordId": 1141 },
+                { "text": "你", "wordId": 1003 },
+                { "text": "打", "note": "打 means to make (a call)" },
+                { "text": "电话", "wordId": 1226 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10227,
+            "topic": "Transportation",
+            "targetWordId": 1227,
+            "answer": "车",
+            "sentence": "他有 ___。",
+            "pinyin": "tā yǒu chē",
+            "nativeSentence": "He has a car.",
+            "explanation": "车 means 'vehicle' or 'car'.",
+            "words": [
+                { "text": "他", "wordId": 1005 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "车", "wordId": 1227 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10228,
+            "topic": "Transportation",
+            "targetWordId": 1228,
+            "answer": "公交车",
+            "sentence": "我坐 ___ 去学校。",
+            "pinyin": "wǒ zuò gōngjiāochē qù xuéxiào",
+            "nativeSentence": "I take the bus to school.",
+            "explanation": "公交车 means 'bus'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "坐", "wordId": 1107 },
+                { "text": "公交车", "wordId": 1228 },
+                { "text": "去", "wordId": 1099 },
+                { "text": "学校", "wordId": 1202 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10229,
+            "topic": "Transportation",
+            "targetWordId": 1229,
+            "answer": "地铁",
+            "sentence": "坐 ___ 很快。",
+            "pinyin": "zuò dìtiě hěn kuài",
+            "nativeSentence": "Taking the subway is very fast.",
+            "explanation": "地铁 means 'subway'.",
+            "words": [
+                { "text": "坐", "wordId": 1107 },
+                { "text": "地铁", "wordId": 1229 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "快", "wordId": 1172 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10230,
+            "topic": "Transportation",
+            "targetWordId": 1230,
+            "answer": "出租车",
+            "sentence": "我坐 ___ 回家。",
+            "pinyin": "wǒ zuò chūzūchē huí jiā",
+            "nativeSentence": "I take a taxi home.",
+            "explanation": "出租车 means 'taxi'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "坐", "wordId": 1107 },
+                { "text": "出租车", "wordId": 1230 },
+                { "text": "回", "wordId": 1101 },
+                { "text": "家", "wordId": 1078 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10231,
+            "topic": "Transportation",
+            "targetWordId": 1231,
+            "answer": "自行车",
+            "sentence": "我骑 ___ 上班。",
+            "pinyin": "wǒ qí zìxíngchē shàngbān",
+            "nativeSentence": "I ride a bicycle to work.",
+            "explanation": "自行车 means 'bicycle'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "骑", "note": "骑 means to ride" },
+                { "text": "自行车", "wordId": 1231 },
+                { "text": "上班", "note": "上班 means to go to work" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10232,
+            "topic": "Transportation",
+            "targetWordId": 1232,
+            "answer": "飞机",
+            "sentence": "我坐 ___ 去中国。",
+            "pinyin": "wǒ zuò fēijī qù Zhōngguó",
+            "nativeSentence": "I take a plane to China.",
+            "explanation": "飞机 means 'airplane'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "坐", "wordId": 1107 },
+                { "text": "飞机", "wordId": 1232 },
+                { "text": "去", "wordId": 1099 },
+                { "text": "中国", "note": "China" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10233,
+            "topic": "Transportation",
+            "targetWordId": 1233,
+            "answer": "火车",
+            "sentence": "___ 很快。",
+            "pinyin": "huǒchē hěn kuài",
+            "nativeSentence": "The train is very fast.",
+            "explanation": "火车 means 'train'.",
+            "words": [
+                { "text": "火车", "wordId": 1233 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "快", "wordId": 1172 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10234,
+            "topic": "Places",
+            "targetWordId": 1234,
+            "answer": "路",
+            "sentence": "这条 ___ 很长。",
+            "pinyin": "zhè tiáo lù hěn cháng",
+            "nativeSentence": "This road is very long.",
+            "explanation": "路 means 'road'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "条", "wordId": 1268 },
+                { "text": "路", "wordId": 1234 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "长", "wordId": 1168 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10235,
+            "topic": "Money",
+            "targetWordId": 1235,
+            "answer": "钱",
+            "sentence": "我没有 ___。",
+            "pinyin": "wǒ méiyǒu qián",
+            "nativeSentence": "I don't have money.",
+            "explanation": "钱 means 'money'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "没有", "wordId": 1097 },
+                { "text": "钱", "wordId": 1235 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10236,
+            "topic": "Shopping",
+            "targetWordId": 1236,
+            "answer": "价格",
+            "sentence": "这个 ___ 太高了。",
+            "pinyin": "zhè gè jiàgé tài gāo le",
+            "nativeSentence": "This price is too high.",
+            "explanation": "价格 means 'price'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "价格", "wordId": 1236 },
+                { "text": "太", "wordId": 1280 },
+                { "text": "高", "wordId": 1166 },
+                { "text": "了", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10237,
+            "topic": "Drinks",
+            "targetWordId": 1237,
+            "answer": "水",
+            "sentence": "我想喝 ___。",
+            "pinyin": "wǒ xiǎng hē shuǐ",
+            "nativeSentence": "I want to drink water.",
+            "explanation": "水 means 'water'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "想", "wordId": 1124 },
+                { "text": "喝", "wordId": 1111 },
+                { "text": "水", "wordId": 1237 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10238,
+            "topic": "Drinks",
+            "targetWordId": 1238,
+            "answer": "茶",
+            "sentence": "中国人喜欢喝 ___。",
+            "pinyin": "Zhōngguó rén xǐhuān hē chá",
+            "nativeSentence": "Chinese people like to drink tea.",
+            "explanation": "茶 means 'tea'.",
+            "words": [
+                { "text": "中国", "note": "China" },
+                { "text": "人", "wordId": 1088 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "喝", "wordId": 1111 },
+                { "text": "茶", "wordId": 1238 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10239,
+            "topic": "Drinks",
+            "targetWordId": 1239,
+            "answer": "咖啡",
+            "sentence": "早上我喝 ___。",
+            "pinyin": "zǎoshang wǒ hē kāfēi",
+            "nativeSentence": "In the morning I drink coffee.",
+            "explanation": "咖啡 means 'coffee'.",
+            "words": [
+                { "text": "早上", "wordId": 1054 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "喝", "wordId": 1111 },
+                { "text": "咖啡", "wordId": 1239 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10240,
+            "topic": "Drinks",
+            "targetWordId": 1240,
+            "answer": "牛奶",
+            "sentence": "孩子喝 ___。",
+            "pinyin": "háizi hē niúnǎi",
+            "nativeSentence": "The child drinks milk.",
+            "explanation": "牛奶 means 'milk'.",
+            "words": [
+                { "text": "孩子", "wordId": 1084 },
+                { "text": "喝", "wordId": 1111 },
+                { "text": "牛奶", "wordId": 1240 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10241,
+            "topic": "Drinks",
+            "targetWordId": 1241,
+            "answer": "果汁",
+            "sentence": "我喜欢喝 ___。",
+            "pinyin": "wǒ xǐhuān hē guǒzhī",
+            "nativeSentence": "I like drinking fruit juice.",
+            "explanation": "果汁 means 'fruit juice'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "喝", "wordId": 1111 },
+                { "text": "果汁", "wordId": 1241 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10242,
+            "topic": "Drinks",
+            "targetWordId": 1242,
+            "answer": "啤酒",
+            "sentence": "他喝 ___。",
+            "pinyin": "tā hē píjiǔ",
+            "nativeSentence": "He drinks beer.",
+            "explanation": "啤酒 means 'beer'.",
+            "words": [
+                { "text": "他", "wordId": 1005 },
+                { "text": "喝", "wordId": 1111 },
+                { "text": "啤酒", "wordId": 1242 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10243,
+            "topic": "Food",
+            "targetWordId": 1243,
+            "answer": "饭",
+            "sentence": "我们吃 ___。",
+            "pinyin": "wǒmen chī fàn",
+            "nativeSentence": "We eat (a meal).",
+            "explanation": "饭 means 'meal' or 'rice'.",
+            "words": [
+                { "text": "我们", "wordId": 1002 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "饭", "wordId": 1243 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10244,
+            "topic": "Food",
+            "targetWordId": 1244,
+            "answer": "米饭",
+            "sentence": "我喜欢吃 ___。",
+            "pinyin": "wǒ xǐhuān chī mǐfàn",
+            "nativeSentence": "I like eating rice.",
+            "explanation": "米饭 means 'cooked rice'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "米饭", "wordId": 1244 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10245,
+            "topic": "Food",
+            "targetWordId": 1245,
+            "answer": "面条",
+            "sentence": "中午我吃 ___。",
+            "pinyin": "zhōngwǔ wǒ chī miàntiáo",
+            "nativeSentence": "At noon I eat noodles.",
+            "explanation": "面条 means 'noodles'.",
+            "words": [
+                { "text": "中午", "wordId": 1056 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "面条", "wordId": 1245 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10246,
+            "topic": "Food",
+            "targetWordId": 1246,
+            "answer": "面包",
+            "sentence": "早上我吃 ___。",
+            "pinyin": "zǎoshang wǒ chī miànbāo",
+            "nativeSentence": "In the morning I eat bread.",
+            "explanation": "面包 means 'bread'.",
+            "words": [
+                { "text": "早上", "wordId": 1054 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "面包", "wordId": 1246 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10247,
+            "topic": "Food",
+            "targetWordId": 1247,
+            "answer": "饺子",
+            "sentence": "我爱吃 ___。",
+            "pinyin": "wǒ ài chī jiǎozi",
+            "nativeSentence": "I love eating dumplings.",
+            "explanation": "饺子 means 'dumplings'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "爱", "wordId": 1129 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "饺子", "wordId": 1247 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10248,
+            "topic": "Food",
+            "targetWordId": 1248,
+            "answer": "菜",
+            "sentence": "这个 ___ 很好吃。",
+            "pinyin": "zhè gè cài hěn hǎochī",
+            "nativeSentence": "This dish is very tasty.",
+            "explanation": "菜 means 'vegetable' or 'dish'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "菜", "wordId": 1248 },
+                { "text": "很", "wordId": 1279 },
+                { "text": "好吃", "wordId": 1191 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10249,
+            "topic": "Food",
+            "targetWordId": 1249,
+            "answer": "肉",
+            "sentence": "我不吃 ___。",
+            "pinyin": "wǒ bù chī ròu",
+            "nativeSentence": "I don't eat meat.",
+            "explanation": "肉 means 'meat'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "不", "wordId": 1302 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "肉", "wordId": 1249 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10250,
+            "topic": "Food",
+            "targetWordId": 1250,
+            "answer": "鱼",
+            "sentence": "我喜欢吃 ___。",
+            "pinyin": "wǒ xǐhuān chī yú",
+            "nativeSentence": "I like eating fish.",
+            "explanation": "鱼 means 'fish'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "鱼", "wordId": 1250 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10251,
+            "topic": "Food",
+            "targetWordId": 1251,
+            "answer": "鸡蛋",
+            "sentence": "早上我吃 ___。",
+            "pinyin": "zǎoshang wǒ chī jīdàn",
+            "nativeSentence": "In the morning I eat eggs.",
+            "explanation": "鸡蛋 means 'egg'.",
+            "words": [
+                { "text": "早上", "wordId": 1054 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "鸡蛋", "wordId": 1251 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10252,
+            "topic": "Food",
+            "targetWordId": 1252,
+            "answer": "水果",
+            "sentence": "我喜欢吃 ___。",
+            "pinyin": "wǒ xǐhuān chī shuǐguǒ",
+            "nativeSentence": "I like eating fruit.",
+            "explanation": "水果 means 'fruit'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "水果", "wordId": 1252 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10253,
+            "topic": "Fruit",
+            "targetWordId": 1253,
+            "answer": "苹果",
+            "sentence": "一天一个 ___，医生远离我。",
+            "pinyin": "yī tiān yī gè píngguǒ, yīshēng yuǎn lí wǒ",
+            "nativeSentence": "An apple a day keeps the doctor away.",
+            "explanation": "苹果 means 'apple'.",
+            "words": [
+                { "text": "一", "wordId": 1032 },
+                { "text": "天", "wordId": 1061 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "苹果", "wordId": 1253 },
+                { "text": "医生", "wordId": 1093 },
+                { "text": "远", "wordId": 1170 },
+                { "text": "离", "note": "离 means from" },
+                { "text": "我", "wordId": 1001 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10254,
+            "topic": "Fruit",
+            "targetWordId": 1254,
+            "answer": "香蕉",
+            "sentence": "猴子喜欢吃 ___。",
+            "pinyin": "hóuzi xǐhuān chī xiāngjiāo",
+            "nativeSentence": "Monkeys like to eat bananas.",
+            "explanation": "香蕉 means 'banana'.",
+            "words": [
+                { "text": "猴子", "note": "猴子 means monkey" },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "香蕉", "wordId": 1254 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10255,
+            "topic": "Colors",
+            "targetWordId": 1255,
+            "answer": "颜色",
+            "sentence": "我喜欢这个 ___。",
+            "pinyin": "wǒ xǐhuān zhè gè yánsè",
+            "nativeSentence": "I like this color.",
+            "explanation": "颜色 means 'color'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "这", "wordId": 1013 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "颜色", "wordId": 1255 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10256,
+            "topic": "Colors",
+            "targetWordId": 1256,
+            "answer": "红",
+            "sentence": "我喜欢 ___ 色。",
+            "pinyin": "wǒ xǐhuān hóng sè",
+            "nativeSentence": "I like the color red.",
+            "explanation": "红 means 'red'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "红", "wordId": 1256 },
+                { "text": "色", "note": "色 means color" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10257,
+            "topic": "Colors",
+            "targetWordId": 1257,
+            "answer": "黄",
+            "sentence": "香蕉是 ___ 色的。",
+            "pinyin": "xiāngjiāo shì huáng sè de",
+            "nativeSentence": "Bananas are yellow.",
+            "explanation": "黄 means 'yellow'.",
+            "words": [
+                { "text": "香蕉", "wordId": 1254 },
+                { "text": "是", "wordId": 1095 },
+                { "text": "黄", "wordId": 1257 },
+                { "text": "色", "note": "color" },
+                { "text": "的", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10258,
+            "topic": "Colors",
+            "targetWordId": 1258,
+            "answer": "蓝",
+            "sentence": "天空是 ___ 色的。",
+            "pinyin": "tiānkōng shì lán sè de",
+            "nativeSentence": "The sky is blue.",
+            "explanation": "蓝 means 'blue'.",
+            "words": [
+                { "text": "天空", "note": "天空 means sky" },
+                { "text": "是", "wordId": 1095 },
+                { "text": "蓝", "wordId": 1258 },
+                { "text": "色", "note": "color" },
+                { "text": "的", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10259,
+            "topic": "Colors",
+            "targetWordId": 1259,
+            "answer": "绿",
+            "sentence": "草是 ___ 色的。",
+            "pinyin": "cǎo shì lǜ sè de",
+            "nativeSentence": "Grass is green.",
+            "explanation": "绿 means 'green'.",
+            "words": [
+                { "text": "草", "note": "草 means grass" },
+                { "text": "是", "wordId": 1095 },
+                { "text": "绿", "wordId": 1259 },
+                { "text": "色", "note": "color" },
+                { "text": "的", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10260,
+            "topic": "Colors",
+            "targetWordId": 1260,
+            "answer": "白",
+            "sentence": "雪是 ___ 色的。",
+            "pinyin": "xuě shì bái sè de",
+            "nativeSentence": "Snow is white.",
+            "explanation": "白 means 'white'.",
+            "words": [
+                { "text": "雪", "note": "雪 means snow" },
+                { "text": "是", "wordId": 1095 },
+                { "text": "白", "wordId": 1260 },
+                { "text": "色", "note": "color" },
+                { "text": "的", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10261,
+            "topic": "Colors",
+            "targetWordId": 1261,
+            "answer": "黑",
+            "sentence": "夜晚是 ___ 色的。",
+            "pinyin": "yèwǎn shì hēi sè de",
+            "nativeSentence": "Night is black.",
+            "explanation": "黑 means 'black'.",
+            "words": [
+                { "text": "夜晚", "note": "夜晚 means night" },
+                { "text": "是", "wordId": 1095 },
+                { "text": "黑", "wordId": 1261 },
+                { "text": "色", "note": "color" },
+                { "text": "的", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10262,
+            "topic": "Measure Words",
+            "targetWordId": 1262,
+            "answer": "个",
+            "sentence": "我有两 ___ 苹果。",
+            "pinyin": "wǒ yǒu liǎng gè píngguǒ",
+            "nativeSentence": "I have two apples.",
+            "explanation": "个 is a general measure word.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "两", "wordId": 1033 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "苹果", "wordId": 1253 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10263,
+            "topic": "Measure Words",
+            "targetWordId": 1263,
+            "answer": "位",
+            "sentence": "这有 ___ 老师。",
+            "pinyin": "zhè yǒu yī wèi lǎoshī",
+            "nativeSentence": "There is one teacher here.",
+            "explanation": "位 is a polite measure word for people.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "位", "wordId": 1263 },
+                { "text": "老师", "wordId": 1089 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10264,
+            "topic": "Measure Words",
+            "targetWordId": 1264,
+            "answer": "本",
+            "sentence": "我有三 ___ 书。",
+            "pinyin": "wǒ yǒu sān běn shū",
+            "nativeSentence": "I have three books.",
+            "explanation": "本 is a measure word for books.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "三", "wordId": 1034 },
+                { "text": "本", "wordId": 1264 },
+                { "text": "书", "wordId": 1212 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10265,
+            "topic": "Measure Words",
+            "targetWordId": 1265,
+            "answer": "张",
+            "sentence": "我需要一 ___ 纸。",
+            "pinyin": "wǒ xūyào yī zhāng zhǐ",
+            "nativeSentence": "I need one piece of paper.",
+            "explanation": "张 is a measure word for flat objects.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "需要", "wordId": 1399 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "张", "wordId": 1265 },
+                { "text": "纸", "wordId": 1215 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10266,
+            "topic": "Measure Words",
+            "targetWordId": 1266,
+            "answer": "把",
+            "sentence": "我有一 ___ 伞。",
+            "pinyin": "wǒ yǒu yī bǎ sǎn",
+            "nativeSentence": "I have one umbrella.",
+            "explanation": "把 is a measure word for things with handles.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "把", "wordId": 1266 },
+                { "text": "伞", "note": "伞 means umbrella" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10267,
+            "topic": "Measure Words",
+            "targetWordId": 1267,
+            "answer": "只",
+            "sentence": "我有一 ___ 猫。",
+            "pinyin": "wǒ yǒu yī zhī māo",
+            "nativeSentence": "I have one cat.",
+            "explanation": "只 is a measure word for animals.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "只", "wordId": 1267 },
+                { "text": "猫", "note": "猫 means cat" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10268,
+            "topic": "Measure Words",
+            "targetWordId": 1268,
+            "answer": "条",
+            "sentence": "这是一 ___ 鱼。",
+            "pinyin": "zhè shì yī tiáo yú",
+            "nativeSentence": "This is a fish.",
+            "explanation": "条 is a measure word for long thin objects.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "是", "wordId": 1095 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "条", "wordId": 1268 },
+                { "text": "鱼", "wordId": 1250 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10269,
+            "topic": "Measure Words",
+            "targetWordId": 1269,
+            "answer": "件",
+            "sentence": "我有一 ___ 事。",
+            "pinyin": "wǒ yǒu yī jiàn shì",
+            "nativeSentence": "I have a matter to discuss.",
+            "explanation": "件 is a measure word for clothing or matters.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "件", "wordId": 1269 },
+                { "text": "事", "wordId": 1198 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10270,
+            "topic": "Measure Words",
+            "targetWordId": 1270,
+            "answer": "双",
+            "sentence": "我需要一 ___ 新鞋。",
+            "pinyin": "wǒ xūyào yī shuāng xīn xié",
+            "nativeSentence": "I need a pair of new shoes.",
+            "explanation": "双 means 'pair'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "需要", "wordId": 1399 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "双", "wordId": 1270 },
+                { "text": "新", "note": "新 means new" },
+                { "text": "鞋", "note": "鞋 means shoes" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10271,
+            "topic": "Measure Words",
+            "targetWordId": 1271,
+            "answer": "杯",
+            "sentence": "我想喝一 ___ 茶。",
+            "pinyin": "wǒ xiǎng hē yī bēi chá",
+            "nativeSentence": "I want to drink a cup of tea.",
+            "explanation": "杯 means 'cup' or 'glass'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "想", "wordId": 1124 },
+                { "text": "喝", "wordId": 1111 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "杯", "wordId": 1271 },
+                { "text": "茶", "wordId": 1238 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10272,
+            "topic": "Measure Words",
+            "targetWordId": 1272,
+            "answer": "瓶",
+            "sentence": "我买一 ___ 水。",
+            "pinyin": "wǒ mǎi yī píng shuǐ",
+            "nativeSentence": "I buy a bottle of water.",
+            "explanation": "瓶 means 'bottle'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "买", "wordId": 1113 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "瓶", "wordId": 1272 },
+                { "text": "水", "wordId": 1237 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10273,
+            "topic": "Measure Words",
+            "targetWordId": 1273,
+            "answer": "碗",
+            "sentence": "我吃一 ___ 米饭。",
+            "pinyin": "wǒ chī yī wǎn mǐfàn",
+            "nativeSentence": "I eat a bowl of rice.",
+            "explanation": "碗 means 'bowl'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "吃", "wordId": 1110 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "碗", "wordId": 1273 },
+                { "text": "米饭", "wordId": 1244 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10274,
+            "topic": "Measure Words",
+            "targetWordId": 1274,
+            "answer": "盘",
+            "sentence": "这是一 ___ 菜。",
+            "pinyin": "zhè shì yī pán cài",
+            "nativeSentence": "This is a plate of food.",
+            "explanation": "盘 means 'plate' or 'dish'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "是", "wordId": 1095 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "盘", "wordId": 1274 },
+                { "text": "菜", "wordId": 1248 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10275,
+            "topic": "Measure Words",
+            "targetWordId": 1275,
+            "answer": "块",
+            "sentence": "我要一 ___ 蛋糕。",
+            "pinyin": "wǒ yào yī kuài dàngāo",
+            "nativeSentence": "I want a piece of cake.",
+            "explanation": "块 means 'piece' or 'lump', also for money.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "要", "wordId": 1130 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "块", "wordId": 1275 },
+                { "text": "蛋糕", "note": "蛋糕 means cake" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10276,
+            "topic": "Money",
+            "targetWordId": 1276,
+            "answer": "元",
+            "sentence": "这本书五十一 ___。",
+            "pinyin": "zhè běn shū wǔshí yī yuán",
+            "nativeSentence": "This book is fifty-one yuan.",
+            "explanation": "元 means 'yuan' (Chinese currency).",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "本", "wordId": 1264 },
+                { "text": "书", "wordId": 1212 },
+                { "text": "五十", "note": "五十 means fifty" },
+                { "text": "一", "wordId": 1032 },
+                { "text": "元", "wordId": 1276 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10277,
+            "topic": "Quantity",
+            "targetWordId": 1277,
+            "answer": "些",
+            "sentence": "我有 ___ 问题。",
+            "pinyin": "wǒ yǒu xiē wèntí",
+            "nativeSentence": "I have some questions.",
+            "explanation": "些 means 'some' or 'several'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "些", "wordId": 1277 },
+                { "text": "问题", "note": "问题 means questions" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10278,
+            "topic": "Quantity",
+            "targetWordId": 1278,
+            "answer": "点",
+            "sentence": "我有一 ___ 钱。",
+            "pinyin": "wǒ yǒu yī diǎn qián",
+            "nativeSentence": "I have a little money.",
+            "explanation": "点 means 'a little' or 'a bit'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "一", "wordId": 1032 },
+                { "text": "点", "wordId": 1278 },
+                { "text": "钱", "wordId": 1235 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10279,
+            "topic": "Adverbs",
+            "targetWordId": 1279,
+            "answer": "很",
+            "sentence": "今天天气 ___ 好。",
+            "pinyin": "jīntiān tiānqì hěn hǎo",
+            "nativeSentence": "The weather is very good today.",
+            "explanation": "很 means 'very'.",
+            "words": [
+                { "text": "今天", "wordId": 1051 },
+                { "text": "天气", "note": "weather" },
+                { "text": "很", "wordId": 1279 },
+                { "text": "好", "wordId": 1160 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10280,
+            "topic": "Adverbs",
+            "targetWordId": 1280,
+            "answer": "太",
+            "sentence": "这个 ___ 贵了。",
+            "pinyin": "zhè gè tài guì le",
+            "nativeSentence": "This is too expensive.",
+            "explanation": "太 means 'too' or 'extremely'.",
+            "words": [
+                { "text": "这", "wordId": 1013 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "太", "wordId": 1280 },
+                { "text": "贵", "wordId": 1176 },
+                { "text": "了", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10281,
+            "topic": "Adverbs",
+            "targetWordId": 1281,
+            "answer": "非常",
+            "sentence": "我 ___ 喜欢他。",
+            "pinyin": "wǒ fēicháng xǐhuān tā",
+            "nativeSentence": "I like him very much.",
+            "explanation": "非常 means 'very' or 'extremely'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "非常", "wordId": 1281 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "他", "wordId": 1005 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10282,
+            "topic": "Adverbs",
+            "targetWordId": 1282,
+            "answer": "真",
+            "sentence": "你 ___ 漂亮。",
+            "pinyin": "nǐ zhēn piàoliang",
+            "nativeSentence": "You are really beautiful.",
+            "explanation": "真 means 'really' or 'truly'.",
+            "words": [
+                { "text": "你", "wordId": 1003 },
+                { "text": "真", "wordId": 1282 },
+                { "text": "漂亮", "wordId": 1188 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10283,
+            "topic": "Adverbs",
+            "targetWordId": 1283,
+            "answer": "最",
+            "sentence": "他是我 ___ 好的朋友。",
+            "pinyin": "tā shì wǒ zuì hǎo de péngyou",
+            "nativeSentence": "He is my best friend.",
+            "explanation": "最 means 'most'.",
+            "words": [
+                { "text": "他", "wordId": 1005 },
+                { "text": "是", "wordId": 1095 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "最", "wordId": 1283 },
+                { "text": "好", "wordId": 1160 },
+                { "text": "的", "wordId": 1300 },
+                { "text": "朋友", "wordId": 1085 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10284,
+            "topic": "Adverbs",
+            "targetWordId": 1284,
+            "answer": "更",
+            "sentence": "他比我 ___ 高。",
+            "pinyin": "tā bǐ wǒ gèng gāo",
+            "nativeSentence": "He is taller than me.",
+            "explanation": "更 means 'more'.",
+            "words": [
+                { "text": "他", "wordId": 1005 },
+                { "text": "比", "wordId": 1322 },
+                { "text": "我", "wordId": 1001 },
+                { "text": "更", "wordId": 1284 },
+                { "text": "高", "wordId": 1166 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10285,
+            "topic": "Adverbs",
+            "targetWordId": 1285,
+            "answer": "都",
+            "sentence": "我们 ___ 是学生。",
+            "pinyin": "wǒmen dōu shì xuésheng",
+            "nativeSentence": "We are all students.",
+            "explanation": "都 means 'all' or 'both'.",
+            "words": [
+                { "text": "我们", "wordId": 1002 },
+                { "text": "都", "wordId": 1285 },
+                { "text": "是", "wordId": 1095 },
+                { "text": "学生", "wordId": 1090 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10286,
+            "topic": "Adverbs",
+            "targetWordId": 1286,
+            "answer": "也",
+            "sentence": "我 ___ 喜欢这个。",
+            "pinyin": "wǒ yě xǐhuān zhè gè",
+            "nativeSentence": "I also like this.",
+            "explanation": "也 means 'also' or 'too'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "也", "wordId": 1286 },
+                { "text": "喜欢", "wordId": 1128 },
+                { "text": "这", "wordId": 1013 },
+                { "text": "个", "wordId": 1262 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10287,
+            "topic": "Adverbs",
+            "targetWordId": 1287,
+            "answer": "还",
+            "sentence": "我 ___ 有问题。",
+            "pinyin": "wǒ hái yǒu wèntí",
+            "nativeSentence": "I still have questions.",
+            "explanation": "还 means 'still', 'yet', or 'also'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "还", "wordId": 1287 },
+                { "text": "有", "wordId": 1096 },
+                { "text": "问题", "note": "questions" },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10288,
+            "topic": "Adverbs",
+            "targetWordId": 1288,
+            "answer": "就",
+            "sentence": "我 ___ 来。",
+            "pinyin": "wǒ jiù lái",
+            "nativeSentence": "I'm coming right away.",
+            "explanation": "就 means 'then' or 'just'.",
+            "words": [
+                { "text": "我", "wordId": 1001 },
+                { "text": "就", "wordId": 1288 },
+                { "text": "来", "wordId": 1100 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10289,
+            "topic": "Adverbs",
+            "targetWordId": 1289,
+            "answer": "才",
+            "sentence": "他九点 ___ 来。",
+            "pinyin": "tā jiǔ diǎn cái lái",
+            "nativeSentence": "He didn't come until nine o'clock.",
+            "explanation": "才 means 'only then' or 'just now'.",
+            "words": [
+                { "text": "他", "wordId": 1005 },
+                { "text": "九", "wordId": 1040 },
+                { "text": "点", "wordId": 1072 },
+                { "text": "才", "wordId": 1289 },
+                { "text": "来", "wordId": 1100 },
+                { "text": "。", "isPunctuation": true }
+            ]
+        },
+        {
+            "id": 10290,
+            "topic": "Adverbs",
+            "targetWordId": 1290,
+            "answer": "又",
+            "sentence": "他 ___ 来了。",
+            "pinyin": "tā yòu lái le",
+            "nativeSentence": "He came again.",
+            "explanation": "又 means 'again' (for past events).",
+            "words": [
+                { "text": "他", "wordId": 1005 },
+                { "text": "又", "wordId": 1290 },
+                { "text": "来", "wordId": 1100 },
+                { "text": "了", "wordId": 1300 },
+                { "text": "。", "isPunctuation": true }
+            ]
         }
     ];
