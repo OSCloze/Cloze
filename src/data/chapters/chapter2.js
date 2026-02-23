@@ -28,13 +28,13 @@ export const chapter2 = {
             nativeSentence: "This is Zhang. He is a friend.",
             explanation: "张 (Zhāng) is a common Chinese surname. Here it's the painter's name.",
             words: [
-                { text: "这", wordId: 19 },
-                { text: "是", wordId: 6 },
+                { text: "这", wordId: 20 },
+                { text: "是", wordId: 7 },
                 { text: "张", wordId: 201 },
                 { text: "。", isPunctuation: true },
                 { text: "他", wordId: 3 },
-                { text: "是", wordId: 6 },
-                { text: "朋友", wordId: 40 },
+                { text: "是", wordId: 7 },
+                { text: "朋友", wordId: 41 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -42,8 +42,8 @@ export const chapter2 = {
         {
             id: 202,
             type: "practice",
-            targetWordId: 6, // 是 (from foundation)
-            blankWordId: 6,
+            targetWordId: 7, // 是 (from foundation)
+            blankWordId: 7,
             level: 2,
             difficulty: 1,
             topic: "Introduction",
@@ -57,11 +57,10 @@ export const chapter2 = {
             nativeSentence: "Hello, I am Zhang.",
             explanation: "我是 means 'I am'. This is how you introduce yourself.",
             words: [
-                { text: "你", wordId: 2 },
-                { text: "好", wordId: 12 },
+                { text: "你好", wordId: 103 },
                 { text: "，", isPunctuation: true },
                 { text: "我", wordId: 1 },
-                { text: "是", wordId: 6 },
+                { text: "是", wordId: 7 },
                 { text: "张", wordId: 201 },
                 { text: "。", isPunctuation: true }
             ]
@@ -70,8 +69,8 @@ export const chapter2 = {
         {
             id: 203,
             type: "practice",
-            targetWordId: 43, // 高兴 (from foundation)
-            blankWordId: 43,
+            targetWordId: 44, // 高兴 (from foundation)
+            blankWordId: 44,
             level: 2,
             difficulty: 1,
             topic: "Emotion",
@@ -86,8 +85,8 @@ export const chapter2 = {
             explanation: "高兴 means 'happy'. 很 + adjective is the pattern for describing feelings.",
             words: [
                 { text: "你", wordId: 2 },
-                { text: "很", wordId: 11 },
-                { text: "高兴", wordId: 43 },
+                { text: "很", wordId: 12 },
+                { text: "高兴", wordId: 44 },
                 { text: "！", isPunctuation: true }
             ]
         },
@@ -95,8 +94,8 @@ export const chapter2 = {
         {
             id: 204,
             type: "practice",
-            targetWordId: 9, // 也 (from foundation)
-            blankWordId: 9,
+            targetWordId: 10, // 也 (from foundation)
+            blankWordId: 10,
             level: 2,
             difficulty: 1,
             topic: "Emotion",
@@ -111,9 +110,9 @@ export const chapter2 = {
             explanation: "也 means 'also' or 'too'. It comes after the subject.",
             words: [
                 { text: "我", wordId: 1 },
-                { text: "也", wordId: 9 },
-                { text: "很", wordId: 11 },
-                { text: "高兴", wordId: 43 },
+                { text: "也", wordId: 10 },
+                { text: "很", wordId: 12 },
+                { text: "高兴", wordId: 44 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -190,8 +189,8 @@ export const chapter2 = {
             nativeSentence: "Very happy to meet you.",
             explanation: "认识 means 'to meet'. 很高兴认识你 is a common phrase when meeting someone.",
             words: [
-                { text: "很", wordId: 11 },
-                { text: "高兴", wordId: 43 },
+                { text: "很", wordId: 12 },
+                { text: "高兴", wordId: 44 },
                 { text: "认识", wordId: 203 },
                 { text: "你", wordId: 2 },
                 { text: "。", isPunctuation: true }
@@ -201,8 +200,8 @@ export const chapter2 = {
         {
             id: 208,
             type: "practice",
-            targetWordId: 9, // 也 (from foundation)
-            blankWordId: 9,
+            targetWordId: 10, // 也 (from foundation)
+            blankWordId: 10,
             level: 2,
             difficulty: 1,
             topic: "Greeting",
@@ -217,9 +216,9 @@ export const chapter2 = {
             explanation: "也 adds 'also' to the common phrase.",
             words: [
                 { text: "我", wordId: 1 },
-                { text: "也", wordId: 9 },
-                { text: "很", wordId: 11 },
-                { text: "高兴", wordId: 43 },
+                { text: "也", wordId: 10 },
+                { text: "很", wordId: 12 },
+                { text: "高兴", wordId: 44 },
                 { text: "认识", wordId: 203 },
                 { text: "你", wordId: 2 },
                 { text: "。", isPunctuation: true }
@@ -238,8 +237,8 @@ export const chapter2 = {
         {
             id: 210,
             type: "practice",
-            targetWordId: 37, // 看 (from foundation)
-            blankWordId: 37,
+            targetWordId: 38, // 看 (from foundation)
+            blankWordId: 38,
             level: 2,
             difficulty: 1,
             topic: "Action",
@@ -253,9 +252,9 @@ export const chapter2 = {
             nativeSentence: "Look at this!",
             explanation: "看 means 'to look'. This is a command form.",
             words: [
-                { text: "看", wordId: 37 },
-                { text: "这", wordId: 19 },
-                { text: "个", wordId: 35 },
+                { text: "看", wordId: 38 },
+                { text: "这", wordId: 20 },
+                { text: "个", wordId: 36 },
                 { text: "！", isPunctuation: true }
             ]
         },
@@ -278,17 +277,17 @@ export const chapter2 = {
             nativeSentence: "Very beautiful.",
             explanation: "漂亮 means 'beautiful'. 很 + adjective is the standard pattern.",
             words: [
-                { text: "很", wordId: 11 },
+                { text: "很", wordId: 12 },
                 { text: "漂亮", wordId: 204 },
                 { text: "。", isPunctuation: true }
             ]
         },
-        // 12. Practice: That is my painting.
+        // 12. Practice: That is my painting. (FIXED - 画 is ID 43)
         {
             id: 212,
             type: "practice",
-            targetWordId: 42, // 画 (from foundation)
-            blankWordId: 42,
+            targetWordId: 43, // 画 (from foundation)
+            blankWordId: 43,
             level: 2,
             difficulty: 1,
             topic: "Art",
@@ -302,11 +301,11 @@ export const chapter2 = {
             nativeSentence: "That is my painting.",
             explanation: "画 means 'painting'. 我的画 means 'my painting'.",
             words: [
-                { text: "那", wordId: 20 },
-                { text: "是", wordId: 6 },
+                { text: "那", wordId: 21 },
+                { text: "是", wordId: 7 },
                 { text: "我", wordId: 1 },
-                { text: "的", wordId: 22 },
-                { text: "画", wordId: 42 },
+                { text: "的", wordId: 23 },
+                { text: "画", wordId: 43 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -314,8 +313,8 @@ export const chapter2 = {
         {
             id: 213,
             type: "practice",
-            targetWordId: 39, // 喜欢 (from foundation)
-            blankWordId: 39,
+            targetWordId: 40, // 喜欢 (from foundation)
+            blankWordId: 40,
             level: 2,
             difficulty: 1,
             topic: "Question",
@@ -330,9 +329,9 @@ export const chapter2 = {
             explanation: "喜欢 means 'to like'. 你喜欢画吗？ asks if you like painting.",
             words: [
                 { text: "你", wordId: 2 },
-                { text: "喜欢", wordId: 39 },
-                { text: "画", wordId: 42 },
-                { text: "吗", wordId: 21 },
+                { text: "喜欢", wordId: 40 },
+                { text: "画", wordId: 43 },
+                { text: "吗", wordId: 22 },
                 { text: "？", isPunctuation: true }
             ]
         },
@@ -357,8 +356,8 @@ export const chapter2 = {
             words: [
                 { text: "我", wordId: 1 },
                 { text: "每天", wordId: 205 },
-                { text: "画", wordId: 42 },
-                { text: "画", wordId: 42 },
+                { text: "画", wordId: 43 },
+                { text: "画", wordId: 43 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -366,8 +365,8 @@ export const chapter2 = {
         {
             id: 215,
             type: "practice",
-            targetWordId: 42, // 画 (from foundation)
-            blankWordId: 42,
+            targetWordId: 43, // 画 (from foundation)
+            blankWordId: 43,
             level: 2,
             difficulty: 1,
             topic: "Art",
@@ -381,12 +380,12 @@ export const chapter2 = {
             nativeSentence: "These are all my paintings.",
             explanation: "这都是 means 'these are all'. 我的画 means 'my paintings'.",
             words: [
-                { text: "这", wordId: 19 },
-                { text: "都", wordId: 34 },
-                { text: "是", wordId: 6 },
+                { text: "这", wordId: 20 },
+                { text: "都", wordId: 35 },
+                { text: "是", wordId: 7 },
                 { text: "我", wordId: 1 },
-                { text: "的", wordId: 22 },
-                { text: "画", wordId: 42 },
+                { text: "的", wordId: 23 },
+                { text: "画", wordId: 43 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -394,8 +393,8 @@ export const chapter2 = {
         {
             id: 216,
             type: "practice",
-            targetWordId: 12, // 好 (from foundation)
-            blankWordId: 12,
+            targetWordId: 13, // 好 (from foundation)
+            blankWordId: 13,
             level: 2,
             difficulty: 2,
             topic: "Skill",
@@ -410,10 +409,10 @@ export const chapter2 = {
             explanation: "得 links the verb to the complement. 画得很好 means 'paints well'.",
             words: [
                 { text: "他", wordId: 3 },
-                { text: "画", wordId: 42 },
+                { text: "画", wordId: 43 },
                 { text: "得", wordId: 206 },
-                { text: "很", wordId: 11 },
-                { text: "好", wordId: 12 },
+                { text: "很", wordId: 12 },
+                { text: "好", wordId: 13 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -421,8 +420,8 @@ export const chapter2 = {
         {
             id: 217,
             type: "practice",
-            targetWordId: 42, // 画 (from foundation)
-            blankWordId: 42,
+            targetWordId: 43, // 画 (from foundation)
+            blankWordId: 43,
             level: 2,
             difficulty: 1,
             topic: "Question",
@@ -437,9 +436,9 @@ export const chapter2 = {
             explanation: "喜欢画 means 'like to paint'. Here 画 is a verb.",
             words: [
                 { text: "你", wordId: 2 },
-                { text: "喜欢", wordId: 39 },
-                { text: "画", wordId: 42 },
-                { text: "吗", wordId: 21 },
+                { text: "喜欢", wordId: 40 },
+                { text: "画", wordId: 43 },
+                { text: "吗", wordId: 22 },
                 { text: "？", isPunctuation: true }
             ]
         },
@@ -447,8 +446,8 @@ export const chapter2 = {
         {
             id: 218,
             type: "practice",
-            targetWordId: 37, // 看 (from foundation)
-            blankWordId: 37,
+            targetWordId: 38, // 看 (from foundation)
+            blankWordId: 38,
             level: 2,
             difficulty: 1,
             topic: "Activity",
@@ -463,9 +462,9 @@ export const chapter2 = {
             explanation: "看画 means 'look at paintings'.",
             words: [
                 { text: "我", wordId: 1 },
-                { text: "喜欢", wordId: 39 },
-                { text: "看", wordId: 37 },
-                { text: "画", wordId: 42 },
+                { text: "喜欢", wordId: 40 },
+                { text: "看", wordId: 38 },
+                { text: "画", wordId: 43 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -473,8 +472,8 @@ export const chapter2 = {
         {
             id: 219,
             type: "practice",
-            targetWordId: 37, // 看 (from foundation)
-            blankWordId: 37,
+            targetWordId: 38, // 看 (from foundation)
+            blankWordId: 38,
             level: 2,
             difficulty: 1,
             topic: "Action",
@@ -488,10 +487,10 @@ export const chapter2 = {
             nativeSentence: "Come look at this one.",
             explanation: "来看 means 'come look'.",
             words: [
-                { text: "来", wordId: 24 },
-                { text: "看", wordId: 37 },
-                { text: "这", wordId: 19 },
-                { text: "个", wordId: 35 },
+                { text: "来", wordId: 25 },
+                { text: "看", wordId: 38 },
+                { text: "这", wordId: 20 },
+                { text: "个", wordId: 36 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -525,7 +524,7 @@ export const chapter2 = {
             words: [
                 { text: "你", wordId: 2 },
                 { text: "觉得", wordId: 209 },
-                { text: "怎么样", wordId: 47 },
+                { text: "怎么样", wordId: 48 }, // 怎么 is ID 48, but 怎么样 is a compound
                 { text: "？", isPunctuation: true }
             ]
         },
@@ -533,8 +532,8 @@ export const chapter2 = {
         {
             id: 222,
             type: "practice",
-            targetWordId: 39, // 喜欢 (from foundation)
-            blankWordId: 39,
+            targetWordId: 40, // 喜欢 (from foundation)
+            blankWordId: 40,
             level: 2,
             difficulty: 1,
             topic: "Opinion",
@@ -549,10 +548,10 @@ export const chapter2 = {
             explanation: "喜欢 means 'to like'. 这个画 means 'this painting'.",
             words: [
                 { text: "我", wordId: 1 },
-                { text: "喜欢", wordId: 39 },
-                { text: "这", wordId: 19 },
-                { text: "个", wordId: 35 },
-                { text: "画", wordId: 42 },
+                { text: "喜欢", wordId: 40 },
+                { text: "这", wordId: 20 },
+                { text: "个", wordId: 36 },
+                { text: "画", wordId: 43 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -560,8 +559,8 @@ export const chapter2 = {
         {
             id: 223,
             type: "practice",
-            targetWordId: 45, // 谁 (from foundation)
-            blankWordId: 45,
+            targetWordId: 46, // 谁 (from foundation)
+            blankWordId: 46,
             level: 2,
             difficulty: 1,
             topic: "Question",
@@ -576,8 +575,8 @@ export const chapter2 = {
             explanation: "谁 means 'who'. 她是谁？ asks 'Who is she?'.",
             words: [
                 { text: "她", wordId: 4 },
-                { text: "是", wordId: 6 },
-                { text: "谁", wordId: 45 },
+                { text: "是", wordId: 7 },
+                { text: "谁", wordId: 46 },
                 { text: "？", isPunctuation: true }
             ]
         },
@@ -601,11 +600,11 @@ export const chapter2 = {
             explanation: "爱 means 'to love'. 我爱的人 means 'the person I love'.",
             words: [
                 { text: "她", wordId: 4 },
-                { text: "是", wordId: 6 },
+                { text: "是", wordId: 7 },
                 { text: "我", wordId: 1 },
                 { text: "爱", wordId: 210 },
-                { text: "的", wordId: 22 },
-                { text: "人", wordId: 15 },
+                { text: "的", wordId: 23 },
+                { text: "人", wordId: 16 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -613,8 +612,8 @@ export const chapter2 = {
         {
             id: 225,
             type: "practice",
-            targetWordId: 38, // 想 (from foundation)
-            blankWordId: 38,
+            targetWordId: 39, // 想 (from foundation)
+            blankWordId: 39,
             level: 2,
             difficulty: 1,
             topic: "Thought",
@@ -630,8 +629,8 @@ export const chapter2 = {
             words: [
                 { text: "我", wordId: 1 },
                 { text: "每天", wordId: 205 },
-                { text: "都", wordId: 34 },
-                { text: "想", wordId: 38 },
+                { text: "都", wordId: 35 },
+                { text: "想", wordId: 39 },
                 { text: "她", wordId: 4 },
                 { text: "。", isPunctuation: true }
             ]
@@ -656,9 +655,9 @@ export const chapter2 = {
             explanation: "眼睛 means 'eyes'. 她的眼睛 means 'her eyes'.",
             words: [
                 { text: "她", wordId: 4 },
-                { text: "的", wordId: 22 },
+                { text: "的", wordId: 23 },
                 { text: "眼睛", wordId: 207 },
-                { text: "很", wordId: 11 },
+                { text: "很", wordId: 12 },
                 { text: "漂亮", wordId: 204 },
                 { text: "。", isPunctuation: true }
             ]
@@ -683,7 +682,7 @@ export const chapter2 = {
             explanation: "笑 means 'to smile' or 'to laugh'. 喜欢笑 means 'likes to smile'.",
             words: [
                 { text: "她", wordId: 4 },
-                { text: "喜欢", wordId: 39 },
+                { text: "喜欢", wordId: 40 },
                 { text: "笑", wordId: 208 },
                 { text: "。", isPunctuation: true }
             ]
@@ -709,10 +708,10 @@ export const chapter2 = {
             words: [
                 { text: "我", wordId: 1 },
                 { text: "觉得", wordId: 209 },
-                { text: "这", wordId: 19 },
-                { text: "个", wordId: 35 },
-                { text: "画", wordId: 42 },
-                { text: "很", wordId: 11 },
+                { text: "这", wordId: 20 },
+                { text: "个", wordId: 36 },
+                { text: "画", wordId: 43 },
+                { text: "很", wordId: 12 },
                 { text: "漂亮", wordId: 204 },
                 { text: "。", isPunctuation: true }
             ]
@@ -721,8 +720,8 @@ export const chapter2 = {
         {
             id: 229,
             type: "practice",
-            targetWordId: 46, // 哪里 (from foundation)
-            blankWordId: 46,
+            targetWordId: 47, // 哪里 (from foundation)
+            blankWordId: 47,
             level: 2,
             difficulty: 1,
             topic: "Question",
@@ -737,8 +736,8 @@ export const chapter2 = {
             explanation: "哪里 means 'where'. 她在哪里？ asks 'Where is she?'.",
             words: [
                 { text: "她", wordId: 4 },
-                { text: "在", wordId: 7 },
-                { text: "哪里", wordId: 46 },
+                { text: "在", wordId: 8 },
+                { text: "哪里", wordId: 47 },
                 { text: "？", isPunctuation: true }
             ]
         },
@@ -762,8 +761,8 @@ export const chapter2 = {
             explanation: "这里 means 'here'. 不在这里 means 'is not here'.",
             words: [
                 { text: "她", wordId: 4 },
-                { text: "不", wordId: 10 },
-                { text: "在", wordId: 7 },
+                { text: "不", wordId: 11 },
+                { text: "在", wordId: 8 },
                 { text: "这里", wordId: 211 },
                 { text: "。", isPunctuation: true }
             ]

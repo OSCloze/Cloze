@@ -90,8 +90,10 @@ export default function GameScreen({
                     onError={(e) => {
                       e.target.style.display = 'none';
                       const parent = e.target.parentElement;
-                      parent.innerHTML = '<div class="speaker-placeholder">' +
-                        (currentSentence.speaker ? currentSentence.speaker.charAt(0) : '?') + '</div>';
+                      if (parent) {
+                        parent.innerHTML = '<div class="speaker-placeholder">' +
+                          (currentSentence.speaker ? currentSentence.speaker.charAt(0) : '?') + '</div>';
+                      }
                     }}
                   />
                 </div>

@@ -7,7 +7,7 @@ export const chapter1 = {
     description: "Enter Lǎo Chá's tea shop and learn the basics of greeting and tea.",
     level: 1,
     image: "", // Empty for now - you can add manually later
-    words: [101, 102], // 杯子, 热
+    words: [101, 102, 103], // 杯子, 热
     sentences: [
         // 1. Narrative: Entering the tea shop
         {
@@ -22,8 +22,8 @@ export const chapter1 = {
         {
             id: 102,
             type: "practice",
-            targetWordId: 16, // 茶 (from foundation)
-            blankWordId: 16,
+            targetWordId: 17, // 茶 (from foundation)
+            blankWordId: 17,
             level: 1,
             difficulty: 1,
             topic: "Introduction",
@@ -38,11 +38,11 @@ export const chapter1 = {
             explanation: "茶 means 'tea'. 这是 means 'this is'.",
             words: [
                 { text: "你", wordId: 2 },
-                { text: "好", wordId: 12 },
+                { text: "好", wordId: 13 },
                 { text: "！", isPunctuation: true },
-                { text: "这", wordId: 19 },
-                { text: "是", wordId: 6 },
-                { text: "茶", wordId: 16 },
+                { text: "这", wordId: 20 },
+                { text: "是", wordId: 7 },
+                { text: "茶", wordId: 17 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -50,8 +50,8 @@ export const chapter1 = {
         {
             id: 103,
             type: "practice",
-            targetWordId: 17, // 水 (from foundation)
-            blankWordId: 17,
+            targetWordId: 18, // 水 (from foundation)
+            blankWordId: 18,
             level: 1,
             difficulty: 1,
             topic: "Introduction",
@@ -65,9 +65,9 @@ export const chapter1 = {
             nativeSentence: "That is water.",
             explanation: "水 means 'water'. 那是 means 'that is'.",
             words: [
-                { text: "那", wordId: 20 },
-                { text: "是", wordId: 6 },
-                { text: "水", wordId: 17 },
+                { text: "那", wordId: 21 },
+                { text: "是", wordId: 7 },
+                { text: "水", wordId: 18 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -90,10 +90,10 @@ export const chapter1 = {
             nativeSentence: "This is a cup.",
             explanation: "杯子 means 'cup'. 一个 is a measure word pair meaning 'one'.",
             words: [
-                { text: "这", wordId: 19 },
-                { text: "是", wordId: 6 },
-                { text: "一", wordId: 18 },
-                { text: "个", wordId: 35 },
+                { text: "这", wordId: 20 },
+                { text: "是", wordId: 7 },
+                { text: "一", wordId: 19 },
+                { text: "个", wordId: 36 },
                 { text: "杯子", wordId: 101 },
                 { text: "。", isPunctuation: true }
             ]
@@ -102,8 +102,8 @@ export const chapter1 = {
         {
             id: 105,
             type: "practice",
-            targetWordId: 31, // 喝 (from foundation)
-            blankWordId: 31,
+            targetWordId: 32, // 喝 (from foundation)
+            blankWordId: 32,
             level: 1,
             difficulty: 1,
             topic: "Question",
@@ -118,9 +118,9 @@ export const chapter1 = {
             explanation: "喝 means 'to drink'. Adding 吗 at the end makes it a question.",
             words: [
                 { text: "你", wordId: 2 },
-                { text: "喝", wordId: 31 },
-                { text: "茶", wordId: 16 },
-                { text: "吗", wordId: 21 },
+                { text: "喝", wordId: 32 },
+                { text: "茶", wordId: 17 },
+                { text: "吗", wordId: 22 },
                 { text: "？", isPunctuation: true }
             ]
         },
@@ -143,10 +143,10 @@ export const chapter1 = {
             nativeSentence: "This is hot tea.",
             explanation: "热 means 'hot'. It comes before the noun it describes.",
             words: [
-                { text: "这", wordId: 19 },
-                { text: "是", wordId: 6 },
+                { text: "这", wordId: 20 },
+                { text: "是", wordId: 7 },
                 { text: "热", wordId: 102 },
-                { text: "茶", wordId: 16 },
+                { text: "茶", wordId: 17 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -169,8 +169,8 @@ export const chapter1 = {
             nativeSentence: "The tea is very hot.",
             explanation: "很热 means 'very hot'. The pattern 很 + adjective is common.",
             words: [
-                { text: "茶", wordId: 16 },
-                { text: "很", wordId: 11 },
+                { text: "茶", wordId: 17 },
+                { text: "很", wordId: 12 },
                 { text: "热", wordId: 102 },
                 { text: "。", isPunctuation: true }
             ]
@@ -179,8 +179,8 @@ export const chapter1 = {
         {
             id: 108,
             type: "practice",
-            targetWordId: 16, // 茶 (from foundation)
-            blankWordId: 16,
+            targetWordId: 17, // 茶 (from foundation)
+            blankWordId: 17,
             level: 1,
             difficulty: 1,
             topic: "Opinion",
@@ -194,10 +194,10 @@ export const chapter1 = {
             nativeSentence: "This is good tea.",
             explanation: "好茶 means 'good tea'. 好 describes the tea positively.",
             words: [
-                { text: "这", wordId: 19 },
-                { text: "是", wordId: 6 },
-                { text: "好", wordId: 12 },
-                { text: "茶", wordId: 16 },
+                { text: "这", wordId: 20 },
+                { text: "是", wordId: 7 },
+                { text: "好", wordId: 13 },
+                { text: "茶", wordId: 17 },
                 { text: "。", isPunctuation: true }
             ]
         },
@@ -214,8 +214,8 @@ export const chapter1 = {
         {
             id: 110,
             type: "practice",
-            targetWordId: 33, // 叫 (from foundation)
-            blankWordId: 33,
+            targetWordId: 34, // 叫 (from foundation)
+            blankWordId: 34,
             level: 1,
             difficulty: 1,
             topic: "Question",
@@ -230,8 +230,8 @@ export const chapter1 = {
             explanation: "叫 means 'to be called'. 你叫什么？ asks for someone's name.",
             words: [
                 { text: "你", wordId: 2 },
-                { text: "叫", wordId: 33 },
-                { text: "什么", wordId: 44 },
+                { text: "叫", wordId: 34 },
+                { text: "什么", wordId: 45 },
                 { text: "？", isPunctuation: true }
             ]
         },
@@ -239,8 +239,8 @@ export const chapter1 = {
         {
             id: 111,
             type: "practice",
-            targetWordId: 41, // 名字 (from foundation)
-            blankWordId: 41,
+            targetWordId: 42, // 名字 (from foundation)
+            blankWordId: 42,
             level: 1,
             difficulty: 1,
             topic: "Question",
@@ -255,10 +255,10 @@ export const chapter1 = {
             explanation: "名字 means 'name'. 你的名字 is 'your name'.",
             words: [
                 { text: "你", wordId: 2 },
-                { text: "的", wordId: 22 },
-                { text: "名字", wordId: 41 },
-                { text: "是", wordId: 6 },
-                { text: "什么", wordId: 44 },
+                { text: "的", wordId: 23 },
+                { text: "名字", wordId: 42 },
+                { text: "是", wordId: 7 },
+                { text: "什么", wordId: 45 },
                 { text: "？", isPunctuation: true }
             ]
         },
@@ -266,8 +266,8 @@ export const chapter1 = {
         {
             id: 112,
             type: "practice",
-            targetWordId: 41, // 名字 (from foundation)
-            blankWordId: 41,
+            targetWordId: 42, // 名字 (from foundation)
+            blankWordId: 42,
             level: 1,
             difficulty: 1,
             topic: "Opinion",
@@ -281,18 +281,19 @@ export const chapter1 = {
             nativeSentence: "This name is good.",
             explanation: "这名字 means 'this name'. 好 describes it positively.",
             words: [
-                { text: "这", wordId: 19 },
-                { text: "名字", wordId: 41 },
-                { text: "好", wordId: 12 },
+                { text: "这", wordId: 20 },
+                { text: "名字", wordId: 42 },
+                { text: "好", wordId: 13 },
                 { text: "。", isPunctuation: true }
             ]
         },
-        // 13. Practice: I am called Lǎo Chá.
+        // 13. Practice: I am called Lǎo Chá. (FIXED - added blank)
+        // 13. Practice: I am called Lǎo Chá. (FIXED - target word is 是)
         {
             id: 113,
             type: "practice",
-            targetWordId: null, // Proper noun
-            blankWordId: null,
+            targetWordId: 7, // 是 (from foundation)
+            blankWordId: 7,
             level: 1,
             difficulty: 1,
             topic: "Introduction",
@@ -300,24 +301,24 @@ export const chapter1 = {
             speakerImage: getImagePath("/images/speakers/laocha.webp"),
             image: "", // Empty for now
             sceneDetails: "He places a hand on his chest and introduces himself properly.",
-            sentence: "我是___。",
-            answer: "老茶",
+            sentence: "我___老茶。",
+            answer: "是",
             pinyin: "wǒ shì Lǎo Chá",
-            nativeSentence: "I am called Lǎo Chá.",
-            explanation: "老茶 (Lǎo Chá) is the tea shop owner's name. 老 means 'old', 茶 means 'tea'.",
+            nativeSentence: "I am Lǎo Chá.",
+            explanation: "是 means 'to be'. 我是老茶 means 'I am Lǎo Chá'.",
             words: [
                 { text: "我", wordId: 1 },
-                { text: "是", wordId: 6 },
+                { text: "是", wordId: 7 },
                 { text: "老茶", isProperNoun: true },
                 { text: "。", isPunctuation: true }
             ]
         },
-        // 14. Practice: Hello Lao Cha
+        // 14. Practice: Hello Lao Cha (FIXED - target word is 你好 - needs to be added to level1)
         {
             id: 114,
             type: "practice",
-            targetWordId: null, // Compound of 你 + 好
-            blankWordId: null,
+            targetWordId: 103, // 你好 (to be added to level1)
+            blankWordId: 103,
             level: 1,
             difficulty: 1,
             topic: "Greeting",
@@ -331,8 +332,7 @@ export const chapter1 = {
             nativeSentence: "Hello Lao Cha.",
             explanation: "你好 is the standard greeting, meaning 'hello'.",
             words: [
-                { text: "你", wordId: 2 },
-                { text: "好", wordId: 12 },
+                { text: "你好", wordId: 103 },
                 { text: "，", isPunctuation: true },
                 { text: "老茶", isProperNoun: true },
                 { text: "。", isPunctuation: true }
@@ -342,8 +342,8 @@ export const chapter1 = {
         {
             id: 115,
             type: "practice",
-            targetWordId: 40, // 朋友 (from foundation)
-            blankWordId: 40,
+            targetWordId: 41, // 朋友 (from foundation)
+            blankWordId: 41,
             level: 1,
             difficulty: 1,
             topic: "Greeting",
@@ -358,11 +358,11 @@ export const chapter1 = {
             explanation: "朋友 means 'friend'. 我的 means 'my'.",
             words: [
                 { text: "你", wordId: 2 },
-                { text: "好", wordId: 12 },
+                { text: "好", wordId: 13 },
                 { text: "，", isPunctuation: true },
                 { text: "我", wordId: 1 },
-                { text: "的", wordId: 22 },
-                { text: "朋友", wordId: 40 },
+                { text: "的", wordId: 23 },
+                { text: "朋友", wordId: 41 },
                 { text: "。", isPunctuation: true }
             ]
         },
