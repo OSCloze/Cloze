@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Cloze/static/css/main.d009e3df.css",
-    "main.js": "/Cloze/static/js/main.dbbee803.js",
+    "main.css": "/Cloze/static/css/main.8571c077.css",
+    "main.js": "/Cloze/static/js/main.f2c902d7.js",
     "static/js/453.4a3a137e.chunk.js": "/Cloze/static/js/453.4a3a137e.chunk.js",
     "index.html": "/Cloze/index.html",
-    "main.d009e3df.css.map": "/Cloze/static/css/main.d009e3df.css.map",
-    "main.dbbee803.js.map": "/Cloze/static/js/main.dbbee803.js.map",
+    "main.8571c077.css.map": "/Cloze/static/css/main.8571c077.css.map",
+    "main.f2c902d7.js.map": "/Cloze/static/js/main.f2c902d7.js.map",
     "453.4a3a137e.chunk.js.map": "/Cloze/static/js/453.4a3a137e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d009e3df.css",
-    "static/js/main.dbbee803.js"
+    "static/css/main.8571c077.css",
+    "static/js/main.f2c902d7.js"
   ]
 }
