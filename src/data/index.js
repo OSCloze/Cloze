@@ -1,3 +1,4 @@
+// src/data/index.js
 import { hsk1Words } from './words/hsk1';
 import { hsk2Words } from './words/hsk2';
 import { hsk3Words } from './words/hsk3';
@@ -19,6 +20,19 @@ export const hskSentences = {
     3: hsk3Sentences,
 };
 
+// Helper: get all sentences combined
+export const getAllSentences = () => [
+    ...hsk1Sentences,
+    ...hsk2Sentences,
+    ...hsk3Sentences,
+];
+
+// NEW: Get all sentences that use a specific word as targetWordId
+export const getSentencesByWordId = (wordId) => {
+    const allSentences = getAllSentences();
+    return allSentences.filter(sentence => sentence.targetWordId === wordId);
+};
+
 // Helper: get words for a specific HSK level
 export const getHSKWordsByLevel = (level) => hskWords[level] || [];
 
@@ -32,14 +46,7 @@ export const getAllHSKWords = () => [
 // Helper: get sentences for a specific HSK level
 export const getHSKSentencesByLevel = (level) => hskSentences[level] || [];
 
-// Helper: get all sentences (for global search)
-export const getAllHSKSentences = () => [
-    ...hsk1Sentences,
-    ...hsk2Sentences,
-    ...hsk3Sentences,
-];
-
-// Combined word list (all HSK words, no foundation)
+// Combined word list (all HSK words)
 export const allWords = getAllHSKWords();
 
 // Lookup a word by ID

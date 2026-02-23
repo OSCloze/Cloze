@@ -1569,3 +1569,110 @@ body {
   margin-top: 0.25rem;
   font-style: italic;
 }
+
+/* Add to your main CSS file */
+
+.word-sentences-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+
+.word-sentences-title {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  color: var(--accent2);
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+.word-sentences-list {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.word-sentences-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.word-sentences-list::-webkit-scrollbar-track {
+  background: var(--surface2);
+  border-radius: 3px;
+}
+
+.word-sentences-list::-webkit-scrollbar-thumb {
+  background: var(--accent2);
+  border-radius: 3px;
+}
+
+.word-sentences {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.word-sentence-item {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: var(--surface2);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--accent2);
+}
+
+.word-sentence-item:last-child {
+  margin-bottom: 0;
+}
+
+.sentence-chinese {
+  font-size: 1.2rem;
+  font-family: var(--font-head);
+  color: var(--text);
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+
+.sentence-highlight {
+  color: var(--accent2);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--accent2);
+  text-underline-offset: 2px;
+}
+
+.sentence-pinyin {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 0.25rem;
+}
+
+.sentence-english {
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.word-sentences-empty {
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  background: var(--surface2);
+  border-radius: var(--radius);
+}
+
+.loading-spinner {
+  padding: 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Responsive adjustments */
+@media (max-width: 520px) {
+  .word-sentences-list {
+    max-height: 250px;
+  }
+
+  .sentence-chinese {
+    font-size: 1rem;
+  }
+}
