@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { useGameSession } from '../hooks/useGameSession';
+import { useSentenceProgress } from '../hooks/useSentenceProgress';
 import HSKSetup from '../components/play/HSKSetup';
 import GameScreen from '../components/play/GameScreen';
 import ReviewScreen from '../components/play/ReviewScreen';
@@ -8,9 +9,14 @@ import ReviewScreen from '../components/play/ReviewScreen';
 export default function PlayPage() {
   const { handleCorrectAnswer, wordMastery, setCurrentPage } = useApp();
   const gameSession = useGameSession();
+  const { sentenceProgress, recordAttempt } = useSentenceProgress();
+
+  // Track if current question used "I don't know"
+  const [usedDontKnow, setUsedDontKnow] = useState(false);
 
   const handleStart = (sentences) => {
     gameSession.startSession(sentences, 'hsk');
+    setUsedDontKnow(false);
   };
 
   const handleCheck = () => {
@@ -20,25 +26,59 @@ export default function PlayPage() {
       handleCorrectAnswer(
         gameSession.currentSentence.targetWordId,
         gameSession.currentSentence.id,
-        null // no chapterId needed
+        null
       );
     }
 
     gameSession.recordResult(gameSession.currentSentence.id, {
       correct: isCorrect,
-      answer: gameSession.userAnswer
+      answer: gameSession.userAnswer,
+      usedDontKnow: false
     });
+
+    if (recordAttempt) {
+      recordAttempt(gameSession.currentSentence.id, isCorrect);
+    }
+  };
+
+  const handleDontKnow = (sentence) => {
+    // Mark as incorrect
+    gameSession.setFeedback('Not quite');
+    gameSession.setIsAnswered(true);
+
+    // Fill in the correct answer
+    gameSession.setUserAnswer(sentence.answer);
+
+    // Show explanation
+    gameSession.setShowExplanation(true);
+
+    // Record the incorrect attempt
+    if (recordAttempt) {
+      recordAttempt(sentence.id, false);
+    }
+
+    // Record in game session results with flag
+    gameSession.recordResult(sentence.id, {
+      correct: false,
+      answer: sentence.answer,
+      usedDontKnow: true
+    });
+
+    // Set the flag for this question
+    setUsedDontKnow(true);
   };
 
   const handleNext = () => {
     gameSession.goToNext();
+    // Reset the flag for the next question
+    setUsedDontKnow(false);
   };
 
   const handleWordClick = (wordData) => {
     gameSession.setSelectedWord(wordData);
   };
 
-  // Build review items
+  // Build review items, filtering out the "I don't know" user answer
   const reviewItems = gameSession.sessionSentences
     .filter(s => gameSession.sessionResults[s.id])
     .map(s => {
@@ -46,9 +86,11 @@ export default function PlayPage() {
       return {
         sentence: s.sentence,
         native: s.nativeSentence,
-        userAnswer: r.answer,
+        // Don't show user answer if they used "I don't know"
+        userAnswer: r.usedDontKnow ? '' : r.answer,
         correctAnswer: s.answer,
-        isCorrect: r.correct
+        isCorrect: r.correct,
+        usedDontKnow: r.usedDontKnow || false
       };
     });
 
@@ -78,6 +120,10 @@ export default function PlayPage() {
           onToggleExplanation={gameSession.toggleExplanation}
           onWordClick={handleWordClick}
           onCloseTranslation={gameSession.clearSelectedWord}
+          onRecordAttempt={recordAttempt}
+          onDontKnow={handleDontKnow}
+          sentenceProgress={sentenceProgress}
+          usedDontKnow={usedDontKnow}
         />
       )}
 
@@ -85,7 +131,7 @@ export default function PlayPage() {
         <ReviewScreen
           reviewItems={reviewItems}
           onPlayAgain={gameSession.resetToSetup}
-          onReturnToChapters={() => setCurrentPage('levels')} // go to levels page
+          onReturnToChapters={() => setCurrentPage('levels')}
         />
       )}
     </section>

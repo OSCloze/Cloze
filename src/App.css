@@ -1676,3 +1676,140 @@ body {
     font-size: 1rem;
   }
 }
+
+/* Add to your CSS file */
+
+.play-config-info {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(192, 120, 0, 0.1);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--accent2);
+}
+
+.info-text {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.info-detail {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.topic-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+/* Debug stats (only shows in development) */
+.sentence-stats-debug {
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--surface2);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  text-align: right;
+  opacity: 0.7;
+}
+
+/* Add to your CSS file */
+
+.dont-know-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.btn-dont-know {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: auto;
+  min-width: 120px;
+}
+
+.btn-dont-know:hover {
+  background: rgba(184, 30, 20, 0.05);
+  color: var(--accent);
+  border-color: var(--accent);
+  border-style: solid;
+}
+
+.btn-dont-know:active {
+  transform: scale(0.98);
+}
+
+/* Adjust spacing between Check and I don't know buttons */
+.check-row {
+  margin-bottom: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .btn-dont-know {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+}
+/* Add to your CSS file */
+
+.review-dont-know-note {
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.dont-know-label {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.review-badge--wrong {
+  background: rgba(184, 30, 20, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(184, 30, 20, 0.25);
+}
+
+/* For the "Didn't know" badge */
+.review-badge:contains("Didn't know") {
+  background: rgba(192, 120, 0, 0.15);
+  color: var(--accent2);
+  border: 1px solid rgba(192, 120, 0, 0.3);
+}
+
+/* Add to your CSS file */
+
+.blank-not-clickable {
+  cursor: default;
+}
+
+.blank-not-clickable:hover {
+  background: transparent;
+  transform: none;
+}
+
+/* Make sure the input field itself doesn't show a pointer cursor */
+.inline-answer-word-input {
+  cursor: text;
+}
+
+.inline-answer-word-input:hover {
+  /* No hover effect on the input */
+  background: transparent;
+}

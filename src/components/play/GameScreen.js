@@ -17,7 +17,27 @@ export default function GameScreen({
   onToggleExplanation,
   onWordClick,
   onCloseTranslation,
+  onRecordAttempt,
+  onDontKnow,
+  sentenceProgress,
+  usedDontKnow // New prop to track if "I don't know" was used
 }) {
+
+  const handleCheck = () => {
+    onCheck();
+    // Record the attempt in sentence progress
+    if (onRecordAttempt && currentSentence) {
+      const isCorrect = feedback.includes('Correct');
+      onRecordAttempt(currentSentence.id, isCorrect);
+    }
+  };
+
+  const handleDontKnow = () => {
+    if (onDontKnow) {
+      onDontKnow(currentSentence);
+    }
+  };
+
   return (
     <div className="play-content play-content--game">
       <div className="main">
@@ -35,7 +55,7 @@ export default function GameScreen({
 
         {/* English translation always shown */}
         <div className="english-translation">
-          {currentSentence.nativeSentence}
+          {currentSentence?.nativeSentence}
         </div>
 
         <SentenceDisplay
@@ -44,8 +64,9 @@ export default function GameScreen({
           setUserAnswer={setUserAnswer}
           isAnswered={isAnswered}
           feedback={feedback}
-          onCheck={onCheck}
+          onCheck={handleCheck}
           onWordClick={onWordClick}
+          usedDontKnow={usedDontKnow}
         />
 
         {selectedWord && (
@@ -56,17 +77,31 @@ export default function GameScreen({
         )}
 
         {!isAnswered && (
-          <div className="check-row">
-            <button
-              type="button"
-              id="checkButton"
-              className="btn-primary"
-              onClick={onCheck}
-              disabled={!userAnswer.trim()}
-            >
-              Check
-            </button>
-          </div>
+          <>
+            <div className="check-row">
+              <button
+                type="button"
+                id="checkButton"
+                className="btn-primary"
+                onClick={handleCheck}
+                disabled={!userAnswer.trim()}
+              >
+                Check
+              </button>
+            </div>
+
+            {/* I Don't Know Button */}
+            <div className="dont-know-row">
+              <button
+                type="button"
+                id="dontKnowButton"
+                className="btn-dont-know"
+                onClick={handleDontKnow}
+              >
+                I don't know
+              </button>
+            </div>
+          </>
         )}
 
         {isAnswered && currentSentence?.explanation && (

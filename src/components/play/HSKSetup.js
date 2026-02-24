@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { getHSKSentencesByLevel } from '../../data';
+import { useSentenceProgress } from '../../hooks/useSentenceProgress';
+import { selectWeightedSentences } from '../../utils/weightedSelection';
 
 export default function HSKSetup({ onStart }) {
     const [hskLevel, setHskLevel] = useState(1);
     const [topic, setTopic] = useState('all');
     const [sessionSize, setSessionSize] = useState(5);
     const [availableTopics, setAvailableTopics] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    const { sentenceProgress } = useSentenceProgress();
 
     // Update available topics when HSK level changes
     useEffect(() => {
@@ -26,26 +31,35 @@ export default function HSKSetup({ onStart }) {
         if (topic !== 'all' && !topicList.includes(topic)) {
             setTopic('all');
         }
-    }, [hskLevel]);
+    }, [hskLevel, topic]);
 
     const handleStart = () => {
-        let sentences = getHSKSentencesByLevel(hskLevel);
+        setLoading(true);
 
-        // Filter by topic if not 'all'
-        if (topic !== 'all') {
-            sentences = sentences.filter(s => s.topic === topic);
+        try {
+            let sentences = getHSKSentencesByLevel(hskLevel);
+
+            // Filter by topic if not 'all'
+            if (topic !== 'all') {
+                sentences = sentences.filter(s => s.topic === topic);
+            }
+
+            if (sentences.length === 0) {
+                alert('No sentences available for this selection.');
+                setLoading(false);
+                return;
+            }
+
+            // Use intelligent weighted selection
+            const selected = selectWeightedSentences(sentences, sentenceProgress, sessionSize);
+
+            onStart(selected);
+        } catch (error) {
+            console.error('Failed to load sentences:', error);
+            alert('Error loading sentences. Please try again.');
+        } finally {
+            setLoading(false);
         }
-
-        if (sentences.length === 0) {
-            alert('No sentences available for this selection.');
-            return;
-        }
-
-        // Randomly select the requested number
-        const shuffled = [...sentences].sort(() => Math.random() - 0.5);
-        const selected = shuffled.slice(0, Math.min(sessionSize, sentences.length));
-
-        onStart(selected);
     };
 
     return (
@@ -64,6 +78,7 @@ export default function HSKSetup({ onStart }) {
                     className="play-config-select"
                     value={hskLevel}
                     onChange={(e) => setHskLevel(Number(e.target.value))}
+                    disabled={loading}
                 >
                     <option value={1}>HSK 1</option>
                     <option value={2}>HSK 2</option>
@@ -80,6 +95,7 @@ export default function HSKSetup({ onStart }) {
                     className="play-config-select"
                     value={topic}
                     onChange={(e) => setTopic(e.target.value)}
+                    disabled={loading || availableTopics.length === 0}
                 >
                     <option value="all">All Topics</option>
                     {availableTopics.map(t => (
@@ -102,6 +118,7 @@ export default function HSKSetup({ onStart }) {
                     className="play-config-select"
                     value={sessionSize}
                     onChange={(e) => setSessionSize(Number(e.target.value))}
+                    disabled={loading}
                 >
                     <option value={5}>5 questions</option>
                     <option value={10}>10 questions</option>
@@ -113,8 +130,9 @@ export default function HSKSetup({ onStart }) {
                 type="button"
                 className="btn-primary"
                 onClick={handleStart}
+                disabled={loading}
             >
-                Start Practice
+                {loading ? 'Loading...' : 'Start Practice'}
             </button>
         </div>
     );

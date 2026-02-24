@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReviewScreen = ({ reviewItems, onPlayAgain, onReturnToChapters, onNextChapter }) => {
+const ReviewScreen = ({ reviewItems, onPlayAgain, onReturnToChapters }) => {
   const totalQuestions = reviewItems?.length || 0;
   const correctCount = reviewItems?.filter(item => item?.isCorrect)?.length || 0;
   const incorrectCount = totalQuestions - correctCount;
@@ -51,6 +51,7 @@ const ReviewScreen = ({ reviewItems, onPlayAgain, onReturnToChapters, onNextChap
           const userAnswer = item?.userAnswer || '';
           const correctAnswer = item?.correctAnswer || '';
           const isCorrect = item?.isCorrect || false;
+          const usedDontKnow = item?.usedDontKnow || false;
 
           return (
             <li
@@ -59,7 +60,7 @@ const ReviewScreen = ({ reviewItems, onPlayAgain, onReturnToChapters, onNextChap
             >
               <div className="review-item-header">
                 <span className={`review-badge ${isCorrect ? 'review-badge--correct' : 'review-badge--wrong'}`}>
-                  {isCorrect ? '✓ Correct' : '✗ Incorrect'}
+                  {isCorrect ? '✓ Correct' : usedDontKnow ? '? Didn\'t know' : '✗ Incorrect'}
                 </span>
               </div>
 
@@ -68,9 +69,16 @@ const ReviewScreen = ({ reviewItems, onPlayAgain, onReturnToChapters, onNextChap
 
               {!isCorrect && (
                 <div className="review-incorrect-detail">
-                  <div className="review-user-answer">
-                    Your answer: <span className="user-answer-value">{userAnswer || '(no answer)'}</span>
-                  </div>
+                  {!usedDontKnow && userAnswer && (
+                    <div className="review-user-answer">
+                      Your answer: <span className="user-answer-value">{userAnswer}</span>
+                    </div>
+                  )}
+                  {usedDontKnow && (
+                    <div className="review-dont-know-note">
+                      <span className="dont-know-label">You didn't know this one.</span>
+                    </div>
+                  )}
                   <div className="review-correct-answer">
                     Correct: <span className="correct-highlight">{correctAnswer}</span>
                   </div>
@@ -82,19 +90,9 @@ const ReviewScreen = ({ reviewItems, onPlayAgain, onReturnToChapters, onNextChap
       </ul>
 
       <div className="post-check-row">
-        {onNextChapter ? (
-          // If there's a next chapter, show only the Next Chapter button
-          <button onClick={onNextChapter} className="btn-primary">
-            Next Chapter
-          </button>
-        ) : (
-          // Otherwise (practice mode or last chapter), show the usual two buttons
-          <>
-            <button onClick={onPlayAgain} className="btn-primary">
-              Play Again
-            </button>
-          </>
-        )}
+        <button onClick={onPlayAgain} className="btn-primary">
+          Play Again
+        </button>
       </div>
     </div>
   );
